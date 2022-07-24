@@ -1,0 +1,161 @@
+[{
+  "_id": {
+    "$oid": "626d90f6b78a55e39a90bf30"
+  },
+  "image": "https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1651158870/big_poppas/who_cooked_ya.webp",
+  "name": "Who Cooked Ya?\"",
+  "slug": "who_cooked_ya",
+  "spicy": false,
+  "description": "Italian flour, mozzarella, cream sauce, turkey, orange, almond, herb/arugula mix, cranberry, orange mustard",
+  "price": "21.89"
+},{
+  "_id": {
+    "$oid": "626d90f6b78a55e39a90bf26"
+  },
+  "image": "https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1651158869/big_poppas/gotta_pie.webp",
+  "name": "Somebody's Gotta Pie",
+  "slug": "somebodys_gotta_pie",
+  "spicy": false,
+  "description": "Italian flour, truffle sauce, mozzarella, duck fillet (sous-vide), figs, brie, almonds, pomegranate sauce, calms",
+  "price": "21.89"
+},{
+  "_id": {
+    "$oid": "626d90f6b78a55e39a90bf28"
+  },
+  "image": "https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1651158869/big_poppas/dough_salami.webp",
+  "name": "I Love the Dough & Salami",
+  "slug": "love_the _dough",
+  "spicy": false,
+  "description": "Italian flour, mozzarella, whole tomato sauce, premium salami, oregano",
+  "price": "21.89"
+},{
+  "_id": {
+    "$oid": "626d90f6b78a55e39a90bf2d"
+  },
+  "image": "https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1651158872/big_poppas/pineapples_anthem.webp",
+  "name": "Pineapples' Anthem",
+  "slug": "pineapples_anthem",
+  "spicy": false,
+  "description": "Italian flour, whole tomato sauce, mozzarella, baked chicken, pineapple, bell pepper, orange mustard, cranberry, oregano",
+  "price": "21.89"
+},{
+  "_id": {
+    "$oid": "626d90f6b78a55e39a90bf24"
+  },
+  "image": "https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1651158871/big_poppas/lil_cheese.webp",
+  "name": "Lil Cheese",
+  "slug": "lil_cheese",
+  "spicy": false,
+  "description": "Italian flour, cream and parmesan sauce, mozzarella, DorBlue, parmesan, walnut, cranberry",
+  "price": "21.89"
+},{
+  "_id": {
+    "$oid": "626d90f6b78a55e39a90bf25"
+  },
+  "image": "https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1651158870/big_poppas/cali.webp",
+  "name": "Going Back to Cali",
+  "slug": "going_back_to_cali",
+  "spicy": true,
+  "description": "Italian flour, whole tomato sauce, mozzarella, beef, boiled pork, pepperoni, hunting sausages, bell pepper, Crimean onion, barbecue sauce, oregano",
+  "price": "21.89"
+},{
+  "_id": {
+    "$oid": "626d90f6b78a55e39a90bf23"
+  },
+  "image": "https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1651158870/big_poppas/warning.webp",
+  "name": "Warning",
+  "slug": "warning",
+  "spicy": false,
+  "description": "Italian flour, whole tomato sauce, mozzarella, salmon, tomatoes, spinach, Dorblu, garlic, lemon, pine nuts, olives, oregano.",
+  "price": "21.89"
+},{
+  "_id": {
+    "$oid": "626d90f6b78a55e39a90bf2a"
+  },
+  "image": "https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1651158871/big_poppas/%20mo_pepperoni.webp",
+  "name": "Mo’ Money Mo’ Pepperoni",
+  "slug": "mo_pepperoni",
+  "spicy": true,
+  "description": "Italian flour, Mozzarella, whole tomato sauce, real Italian pepperoni, hot peppers, capers, oregano",
+  "price": "21.89"
+},{
+  "_id": {
+    "$oid": "626d90f6b78a55e39a90bf32"
+  },
+  "image": "https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1651158869/big_poppas/notorious_pie.webp",
+  "name": "Notorious P.I.E",
+  "slug": "notorious_pie",
+  "spicy": false,
+  "description": "Italian flour, someone's grandmother's secret cream sauce, mozzarella, goat cheese, root vegetables, pine nuts",
+  "price": "21.89"
+},{
+  "_id": {
+    "$oid": "626d90f6b78a55e39a90bf2c"
+  },
+  "image": "https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1651158872/big_poppas/whats_beef.webp",
+  "name": "What's Beef",
+  "slug": "whats_beef",
+  "spicy": false,
+  "description": "Italian flour, truffle sauce, mozzarella, roast beef, porcini mushrooms, tomatoes, green onions",
+  "price": "21.89"
+},{
+  "_id": {
+    "$oid": "626d90f6b78a55e39a90bf27"
+  },
+  "image": "https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1651158869/big_poppas/one_more_calm.webp",
+  "name": "One More Calm",
+  "slug": "one_more_ calm",
+  "spicy": false,
+  "description": "Italian flour, cream sauce, mozzarella, shrimp, mussels, avocado, arugula, secret sauce",
+  "price": "21.89"
+},{
+  "_id": {
+    "$oid": "626d90f6b78a55e39a90bf29"
+  },
+  "image": "https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1650337144/big_poppas/gimme_lamb.webp",
+  "name": "Gimmie the Lamb",
+  "slug": "gimmie_the_lamb",
+  "spicy": false,
+  "description": "Italian flour, whole tomato sauce, mozzarella, lamb, baked eggplant, tomato salsa, sweet onion, basil, secret sauce",
+  "price": "21.89"
+},{
+  "_id": {
+    "$oid": "626d90f6b78a55e39a90bf2b"
+  },
+  "image": "https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1651158870/big_poppas/machine_gun.webp",
+  "name": "Machine Gun Funk",
+  "slug": "machine_gun_funk",
+  "spicy": true,
+  "description": "Italian flour, truffle sauce, mozzarella, porcini mushrooms, chanterelles, champignons, sweet onion, green onion",
+  "price": "21.89"
+},{
+  "_id": {
+    "$oid": "626d90f6b78a55e39a90bf2e"
+  },
+  "image": "https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1651158872/big_poppas/ten-crust.webp",
+  "name": "Ten Crust Commandments",
+  "slug": "ten_crust_ commandments",
+  "spicy": false,
+  "description": "Italian flour, whole tomato sauce, mozzarella, duck fillet (sous vide) secret sauces from abroad, including walnut, leek, cucumber, cilantro",
+  "price": "21.89"
+},{
+  "_id": {
+    "$oid": "626d90f6b78a55e39a90bf2f"
+  },
+  "image": "https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1651158871/big_poppas/flava_mouth.webp",
+  "name": "Flava in ya mouth",
+  "slug": "flava_in_ya_mouth",
+  "spicy": false,
+  "description": "Italian flour, whole tomato sauce, mozzarella, dorblu, dried bacon, hot pepper, oregano",
+  "price": "21.89"
+},{
+  "_id": {
+    "$oid": "626d90f6b78a55e39a90bf31"
+  },
+  "image": "https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1651158869/big_poppas/pies_limit.webp",
+  "name": "Pie's the Limit",
+  "slug": "pies_the_limit",
+  "spicy": true,
+  "description": "Italian flour, whole tomato sauce, mozzarella, tomatoes, pesto, oregano",
+  "price": "21.89"
+}]

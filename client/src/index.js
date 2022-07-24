@@ -2,13 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { store } from './app/store';
+import { Provider } from 'react-redux';
+import { extendedApiSlice } from './features/product/productSlice';
+// import { getTotals} from './features/cart/cartSlice';
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from "@mui/material/styles";
+import { customTheme } from './styles/customTheme';
+import CssBaseline from '@mui/material/CssBaseline';
+
+//loads products at app load time
+store.dispatch(extendedApiSlice.endpoints.getProducts.initiate());
+// store.dispatch(getTotals());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <Provider store={store}>
+    <ThemeProvider theme={customTheme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
