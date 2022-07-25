@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
 import { Box, Typography, TextField, Button, Grid } from '@mui/material';
-
+import { Link } from 'react-router-dom';
 
 export const Subheader = styled(Typography)`
   font-family: 'open Sans', sans-serif;
@@ -33,4 +33,20 @@ export const GridItem = styled(Grid)`
   justify-content: center;
 `;
 
-
+export const CustomLink = styled(Link, {
+  shouldForwardProp: prop => prop !== '$dn',
+})(({ theme, $dn }) => ({
+  color: theme.palette.primary.main,
+  fontSize: '1.6rem',
+  fontWeight: 400,
+  cursor: 'pointer',
+  fontFamily: 'open Sans, sans-serif',
+  textTransform: 'capitalize',
+  transition: 'all opacity color .2s ease',
+  position: 'relative',
+  display: 'inline-block',
+  padding: '3px 0',
+  '&:hover': {
+    color: theme.palette.secondary.light,
+  },
+}));

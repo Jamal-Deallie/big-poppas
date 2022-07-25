@@ -75,7 +75,7 @@ export const Form = styled(Box)({
 export const CustomLink = styled(Link, {
   shouldForwardProp: prop => prop !== '$dn',
 })(({ theme, $dn }) => ({
-  color: theme.palette.secondary.light,
+  color: theme.palette.primary.main,
   fontSize: '1.6rem',
   fontWeight: 400,
   cursor: 'pointer',
@@ -85,34 +85,8 @@ export const CustomLink = styled(Link, {
   position: 'relative',
   display: 'inline-block',
   padding: '3px 0',
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    top: 'calc(100% + 5px)',
-    width: 0,
-    right: 0,
-    height: '3px',
-    transition: 'width .4s cubic-bezier(0.51, 0.18, 0, 0.88) .1s',
-    background: theme.palette.primary.main,
-  },
-  '&::after': {
-    content: '""',
-    position: 'absolute',
-    top: 'calc(100% + 5px)',
-    width: 0,
-    right: 0,
-    height: '3px',
-    transition: 'width .2s cubic-bezier(0.29, 0.18, 0.26, 0.83)',
-    background: theme.palette.secondary.main,
-  },
   '&:hover': {
-    '&::after': { width: '100%', left: 0 },
-    '&::before': { width: '100%', left: 0 },
-  },
-  '&.active': {
-    color: theme.palette.warning.main,
-  },
-  [theme.breakpoints.down('md')]: {
-    display: 'none',
+    color: theme.palette.secondary.light,
   },
 }));
+

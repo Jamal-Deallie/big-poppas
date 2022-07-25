@@ -7,12 +7,15 @@ export const Wrap = styled('div')`
   padding: 7.5rem 0;
 `;
 
-export const InnerContainer = styled(Box)({
+export const InnerContainer = styled(Box)(({ theme }) => ({
   maxWidth: '150rem',
   padding: '10.5rem calc(1rem + 1.5625vw)',
   width: '100%',
   margin: '0 auto',
-});
+  [theme.breakpoints.down('md')]: {
+    padding: 'calc(1rem + 1.5625vw)',
+  },
+}));
 
 export const StyledSection = styled('section')`
   background: #d14334;
@@ -25,13 +28,14 @@ export const StyledHeading = styled(Typography)`
   line-height: 1;
   letter-spacing: 0.25rem;
   text-transform: uppercase;
+  font-weight: 400;
   & span {
     color: #e9e7dc;
   }
 `;
 
 export const Outline = styled('span')`
-  -webkit-text-stroke: 0.15rem black;
+  -webkit-text-stroke: 0.2rem black;
   -webkit-text-fill-color: #d14334;
 `;
 export const StyledButton = styled(Button)`
@@ -82,7 +86,10 @@ export const GridImage = styled(Grid)({
   width: '100%',
 });
 
-export const TextContainer = styled(Box)({
+export const TextContainer = styled(Box)(({ theme }) => ({
   overflow: 'hidden',
   width: '60rem',
-});
+  [theme.breakpoints.down('md')]: {
+    width: '100%',
+  },
+}));

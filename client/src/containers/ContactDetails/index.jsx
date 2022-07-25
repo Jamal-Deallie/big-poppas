@@ -11,7 +11,7 @@ import {
   ContactDetailsSection,
   Text,
   Title,
-  GridItem
+  GridItem,
 } from './styles';
 
 import { Grid, Container } from '@mui/material';
@@ -35,7 +35,7 @@ export default function ContactDetailsContainer() {
           <IconWrap>
             <Icon src='/images/icons/email.svg' alt='email' />
           </IconWrap>
-  
+
           <br />
           <Text> info@bigpoppas.com</Text>
         </GridItem>
@@ -43,7 +43,7 @@ export default function ContactDetailsContainer() {
           <IconWrap>
             <Icon src='/images/icons/address.svg' alt='address' />
           </IconWrap>
-  
+
           <br />
           <Text>
             26 St James Pl <br />
@@ -51,26 +51,6 @@ export default function ContactDetailsContainer() {
           </Text>
         </GridItem>
       </ContactContainer>
-      <Container>
-        <Subheader>Other Ways To Contact Us</Subheader>
-        <SocialContainer>
-          <IconWrap>
-            <a href='facebook.com'>
-              <Icon src='/images/icons/facebook.svg' alt='Facebook' />
-            </a>
-          </IconWrap>
-          <IconWrap>
-            <a href='instagram.com'>
-              <Icon src='/images/icons/instagram.svg' alt='Instagram' />
-            </a>
-          </IconWrap>
-          <IconWrap>
-            <a href='twitter.com'>
-              <Icon src='/images/icons/twitter.svg' alt='Twitter' />
-            </a>
-          </IconWrap>
-        </SocialContainer>
-      </Container>
     </ContactDetailsSection>
   );
 }

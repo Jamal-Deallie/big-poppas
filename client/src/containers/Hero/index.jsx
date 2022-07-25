@@ -18,9 +18,10 @@ import { Link } from 'react-router-dom';
 import { Typography } from '@mui//material';
 
 export default function HeroContainer() {
-  const tl = useRef(null);
-  const containerRef = useRef(null);
-
+  const tl = useRef();
+  const containerRef = useRef();
+  const headerRef = useRef();
+  
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(SplitText);
@@ -42,13 +43,14 @@ export default function HeroContainer() {
         const lineSplit2 = new SplitText('#landing-text', {
           type: 'lines',
         });
+
         tl.current = gsap.timeline({
           onComplete() {
             lineSplit1.revert();
             lineSplit2.revert();
           },
         });
-        gsap.set('#landing-button', { autoAlpha: 0 });
+
         // other animations that aren't ScrollTrigger-related...
         contentAnimation = tl.current
           .fromTo(
@@ -61,16 +63,16 @@ export default function HeroContainer() {
               scale: 1.1,
             }
           )
-          .from(
+          .fromTo(
             lineSplit1.chars,
+            { y: 10, opacity: 0 },
             {
               duration: 0.8,
-              opacity: 0,
-              y: 10,
+              opacity: 1,
+              y: 0,
               ease: 'circ.out',
               stagger: 0.02,
-            },
-            '+=0'
+            }
           )
           .fromTo(
             lineSplit2.lines,
@@ -83,7 +85,11 @@ export default function HeroContainer() {
               ease: 'power4.out',
             }
           )
-          .to('#landing-button', { autoAlpha: 1, ease: 'sine.in' });
+          .fromTo(
+            '#landing-button',
+            { opacity: 0 },
+            { opacity: 1, ease: 'sine.in' }
+          );
         let st = gsap.to(containerRef.current, {
           ScrollTrigger: {
             trigger: containerRef.current,
@@ -106,13 +112,13 @@ export default function HeroContainer() {
     return () => {
       console.log('component cleanup');
       contentAnimation && contentAnimation.progress(1); // reverts the SplitText in the onComplete
-      st && st.kill();
+      st && st.refresh();
     };
-  }, [tl, containerRef]);
+  }, [tl.current, containerRef.current]);
 
   return (
     <StyledSection>
-      <InnerContainer id='landing-container'>
+      <InnerContainer ref={containerRef}>
         <GridContainer container spacing={2}>
           <GridItem item md={7}>
             <StyledHeading id='landing-heading'>

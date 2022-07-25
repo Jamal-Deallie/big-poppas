@@ -117,7 +117,7 @@ export default function CartItems({ cart, quantity }) {
           <Typography>Subtotal</Typography>
           <Typography>${subtotal && subtotal}</Typography>
         </SubtotalWrap>
-        <CheckoutButton />
+        <CheckoutButton items={items} />
       </CartFooter>
     </CartSection>
   );

@@ -113,9 +113,7 @@ export default function ContactForm() {
         </CustomButton>
 
         <Grid item xs={12} sx={{ textAlign: 'center', pt: 5.5 }}>
-          <CustomLink to='/'>
-            <Typography sx={{ color: 'primary.main' }}>Cancel</Typography>
-          </CustomLink>
+          <CustomLink to='/'>Cancel</CustomLink>
         </Grid>
       </Form>
     </Container>

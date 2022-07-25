@@ -5,7 +5,7 @@ import {
   ContactSection,
   Image,
   ContactWrap,
-  GridItem,
+  CustomLink,
 } from './styles';
 import { Grid, Container } from '@mui/material';
 
@@ -16,7 +16,7 @@ export default function ContactUsContainer() {
 
       <ContactWrap>
         <Subheader>
-          If our <Link to='faqs'>FAQs</Link> didn’t provide the answer you’re
+          If our <CustomLink to='faqs'>FAQs</CustomLink> didn’t provide the answer you’re
           looking for, we’re here and happy to help! Just fill out the form
           below.
         </Subheader>

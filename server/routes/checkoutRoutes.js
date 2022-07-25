@@ -10,24 +10,28 @@ app.use(express.static('public'));
 const router = express.Router();
 
 const stripe = Stripe(process.env.STRIPE_TEST_API_KEY);
+console.log(Stripe(process.env.STRIPE_TEST_API_KEY));
 
 router.post('/create-checkout-session', async (req, res) => {
+  console.log('hit');
   const { line_items } = req.body;
+  console.log(line_items);
 
+  console.log({ stripe: stripe });
   let session;
   try {
     session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       mode: 'payment',
       line_items: line_items,
-      success_url: 'http://localhost:3000/checkout-success',
+      success_url: `${process.env.WEB_APP_URL}/checkout-success`,
       cancel_url: `${process.env.WEB_APP_URL}`,
       shipping_address_collection: { allowed_countries: ['US'] },
     });
-
+    console.log(session);
     res.send({ url: session.url });
   } catch (err) {
-    alert(err);
+    console.log(err);
     res
       .status(400)
       .json({ error: 'an error occurred. Unable to create session' });
