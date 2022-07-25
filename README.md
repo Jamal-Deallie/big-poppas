@@ -9,7 +9,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![image](https://cloud.githubusercontent.com/assets/9053854/24495974/fbf2e0cc-1547-11e7-846c-25b5fac7f6b1.png)
+![image](https://res.cloudinary.com/dtwk4dm3g/image/upload/v1658729379/big_poppas/screenshots_owfjl7.png)
 
 In my road to becoming a Full Stack developer, instead of coding a Clone Application, I decided to create my own application from scratch. The Application is inspired by the artist,Notorious BIG. The color scheme is from his first album, "Ready To Die". The database was created using MongoDB, and the server was created with Node & Express.
 

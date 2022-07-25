@@ -16,9 +16,11 @@ const app = express();
 
 connectDB();
 
-app.use(cors());
-
-app.options('*', cors());
+app.use(
+  cors({
+    origin: process.env.WEB_APP_URL,
+  })
+);
 
 app.use(
   express.urlencoded({
