@@ -4,7 +4,7 @@ export const apiSlice = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://big-poppas.herokuapp.com/api/v1',
-    mode: 'cors',
+    mode: 'no-cors',
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.token;
       if (token) {
