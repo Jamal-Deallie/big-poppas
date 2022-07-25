@@ -40,12 +40,12 @@ app.use((req, res, next) => {
 
 // 3) ROUTES
 
-app.use('/api/v1/users', userRouter);
-app.use('/api/v1/products', productRouter);
-app.use('/api/v1/checkout', checkoutRouter);
-app.use('/api/v1/webhook', webhookRouter);
-app.use('/api/v1/contactus', contactRouter);
-app.use('/api/v1/newsletter', newsLetterRouter);
+app.use('/users', userRouter);
+app.use('/products', productRouter);
+app.use('/checkout', checkoutRouter);
+app.use('/webhook', webhookRouter);
+app.use('/contactus', contactRouter);
+app.use('/newsletter', newsLetterRouter);
 
 app.get('/', (req, res) => {
   // Sending the response

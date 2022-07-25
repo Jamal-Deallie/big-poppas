@@ -47,9 +47,14 @@ export default function ProductListContainer() {
       return <CustomCard product={loadedProducts} />;
     } else if (isError) {
       return (
-        <Typography variant='header1' sx={{ color: 'secondary.light' }}>
-          An Error has occurred
-        </Typography>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Typography variant='body2'>An Error has occurred</Typography>
+        </Box>
       );
     }
   }, [isLoading, isSuccess, isError, loadedProducts]);

@@ -47,7 +47,16 @@ export default function SearchListContainer() {
 
       return <CustomCard product={doc} />;
     } else if (isError) {
-      return <Typography>An Error has occurred</Typography>;
+      return (
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Typography variant='body2'>An Error has occurred</Typography>
+        </Box>
+      );
     }
   }, [isLoading, isSuccess, isError, data]);
 
