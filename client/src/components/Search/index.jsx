@@ -10,11 +10,11 @@ import {
   FormWrapper,
   CloseSearchBtn,
   SubmitBtn,
-  Icon,
+  SearchIcon,
   NavOption,
 } from './styles';
 import { Drawer, Box } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
+
 import CloseIcon from '@mui/icons-material/Close';
 
 export default function Search() {
@@ -39,8 +39,8 @@ export default function Search() {
   }
   return (
     <>
-      <Box onClick={cart}>
-        <NavOption>Search</NavOption>
+      <Box onClick={cart} sx={{mt:1}}>
+        <SearchIcon src='/images/icons/search-2.svg' alt='search' />
       </Box>
 
       <Drawer anchor='top' open={openCart} onClose={cart}>

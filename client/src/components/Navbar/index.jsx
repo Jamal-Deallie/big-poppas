@@ -8,7 +8,7 @@ import {
   NavItems,
   NavOption,
 } from './styles.js';
-import { Cart, SearchBar, Search } from '../../components';
+import { Cart, SearchBar, Search, MobileMenu } from '../../components';
 import { navItems } from '../../shared/navItems';
 import { Link, useNavigate } from 'react-router-dom';
 import { Box } from '@mui/material';
@@ -16,19 +16,15 @@ import { selectToken } from '../../features/auth/authSlice';
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const [toggleSearch, setToggleSearch] = useState(false);
 
   const token = localStorage.getItem('token');
 
   const authState = false;
 
-  function handleSearchBar() {
-    setToggleSearch(toggleSearch => !toggleSearch);
-  }
-
   return (
     <>
       <StyledContainer>
+        <MobileMenu />
         <Nav>
           <Link to='/'>
             <Logo

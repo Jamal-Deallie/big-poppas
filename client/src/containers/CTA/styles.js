@@ -13,33 +13,33 @@ export const CTASection = styled('div')`
   width: 100%;
   background: #1c1c1c;
   color: #e9e7dc;
-  padding: 12.5rem 0;
+  padding: 10.5rem 0;
 `;
 
 export const Heading = styled(Typography)`
   font-family: Thunder;
   font-size: clamp(3.38rem, calc(0.88rem + 13.47vw), 11.77rem);
   font-weight: bold;
-  line-height: 10rem;
-  letter-spacing: 0.25rem;
+  line-height: 1.2;
+  letter-spacing: 0.3rem;
   text-transform: uppercase;
   color: #e9e7dc;
   text-align: center;
 `;
 
 export const Outline = styled('span')`
-  -webkit-text-stroke: 0.15rem #d14334;
+  -webkit-text-stroke: 0.2rem #d14334;
   -webkit-text-fill-color: #1c1c1c;
 `;
 
-export const Subheader = styled(Typography)`
-  font-family: 'open Sans', sans-serif;
-  font-size: 1.8rem;
-  max-width: 60rem;
-  text-align: center;
-  margin: 0 auto;
-  padding: 7.5rem 0;
-`;
+export const Subheader = styled(Typography)({
+  fontFamily: 'open-sans, sans-serif',
+  fontSize: '1.8rem',
+  maxWidth: '60rem',
+  textAlign: 'center',
+  margin: '0 auto',
+  lineHeight: 1.2,
+});
 
 export const ContentContainer = styled(Container)`
   position: relative;

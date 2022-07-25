@@ -1,52 +1,42 @@
 import { styled } from '@mui/system';
-import { Container, Typography, Grid, Button } from '@mui/material';
+import { Container, Typography, Grid, Button, Box } from '@mui/material';
 
-export const StorySection = styled('div')`
-  width: 100%;
-  background: #1c1c1c;
-`;
-
-export const Text = styled(Typography)`
-  fontFamily: 'open Sans', sans-serif;
-  fontSize: '1.8rem',
-  color: #e9e7dc;
-`;
-
-// export const HeadingContainer = styled(Container)`
-/* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
-// `;
-
-export const HeadingContainer = styled(Container)(({ theme }) => ({
+export const StorySection = styled(Box)(({ theme }) => ({
+  width: '100%',
+  background: theme.palette.primary.main,
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  display: 'none',
+  height: '100%',
+  position: 'relative',
   [theme.breakpoints.down('md')]: {
-    display: 'block',
+    flexDirection: 'column',
+    padding: 'calc(.8rem + 1.5vw)',
   },
 }));
 
-export const Crown = styled('img')`
-  height: 4rem;
-  position: absolute;
-  right: 0%;
-  top: 0%;
-`;
+export const HeadingContainer = styled(Container)(({ theme }) => ({
+  display: 'none',
+
+  [theme.breakpoints.down('md')]: {
+    display: 'block',
+    marginTop: '3.5rem',
+  },
+}));
 
 export const Image = styled('img')({
   maxHeight: '45rem',
-  padding: 'calc(.8rem - 1.5vw)',
   maskImage: 'linear-gradient(to top, transparent 1%, black 45%)',
 });
 
-export const ImageWrapper = styled(Grid)({
+export const ImageWrapper = styled(Grid)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-});
+  [theme.breakpoints.down('md')]: {
+    paddingTop: '5.5rem',
+  },
+}));
 
 export const GridContainer = styled(Grid)({
   margin: '0 auto',
@@ -55,8 +45,6 @@ export const GridContainer = styled(Grid)({
   alignItems: 'center',
 });
 
-export const Circle = styled('span')``;
-// #e9e7dc;
 export const StyledButton = styled(Button)`
   font-family: 'open Sans', sans-serif;
   font-size: 16px;
@@ -85,12 +73,12 @@ export const Heading = styled(Typography)`
   font-family: Thunder;
   font-size: clamp(3.38rem, calc(0.88rem + 13.47vw), 11.77rem);
   font-weight: bold;
-  line-height: 10rem;
+  line-height: 1;
   letter-spacing: 0.25rem;
   text-transform: uppercase;
   color: #e9e7dc;
   text-align: center;
-  margin-bottom: 7.5rem;
+  margin-bottom: 3.5rem;
   max-width: 60rem;
 `;
 

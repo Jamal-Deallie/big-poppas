@@ -119,3 +119,5 @@ export const ProductWrapper = styled(Container)`
   grid-gap: 5rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 `;
+
+

@@ -1,5 +1,5 @@
-import { SearchResultsContainer } from '../../containers';
+import { ProductContainer } from '../../containers';
 
 export default function SearchResultsPage() {
-  return <SearchResultsContainer />;
+  return <ProductContainer />;
 }

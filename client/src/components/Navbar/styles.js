@@ -13,16 +13,27 @@ export const Nav = styled('nav')(({ theme }) => ({
   justifyContent: 'space-between',
   borderBottom: `${theme.palette.secondary.main} 1px solid`,
   zIndex: 2,
+  [theme.breakpoints.down('md')]: {
+    padding: '0 2rem',
+  },
 }));
 
 export const StyledContainer = styled(Box)({
   width: '100%',
 });
 
-export const Logo = styled('img')({
+export const Logo = styled('img')(({ theme }) => ({
   width: '5rem',
   flex: 1,
-});
+  [theme.breakpoints.down('md')]: {
+    margin: 0,
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    flex: 'none',
+  },
+}));
 
 export const NavItems = styled(Box)({
   display: 'flex',
@@ -35,19 +46,22 @@ export const NavItems = styled(Box)({
   flex: 2,
 });
 
-export const NavOptions = styled(Box)({
+export const NavOptions = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   width: 'auto',
   gap: '2.5rem',
   cursor: 'pointer',
-});
+  [theme.breakpoints.down('md')]: {
+    gap: '2rem',
+  },
+}));
 
 export const NavLinks = styled(NavLink, {
   shouldForwardProp: prop => prop !== '$dn',
 })(({ theme, $dn }) => ({
   color: theme.palette.secondary.light,
-  fontSize: '1.6rem',
+  fontSize: '1.8rem',
   fontWeight: 400,
   cursor: 'pointer',
   fontFamily: 'open Sans, sans-serif',
@@ -82,6 +96,7 @@ export const NavLinks = styled(NavLink, {
   },
   '&.active': {
     color: theme.palette.warning.main,
+    fontWeight: 600,
   },
   [theme.breakpoints.down('md')]: {
     display: 'none',

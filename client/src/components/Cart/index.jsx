@@ -10,12 +10,12 @@ import {
 } from '@mui/material';
 import { CartItems } from '../../components';
 import { useSelector } from 'react-redux';
-// import { selectCartQuantity } from '../../features/cart/cartSlice.js';
+import { selectCartQuantity } from '../../features/cart/cartSlice.js';
 
 export default function Cart() {
   const [open, setOpen] = useState(false);
 
-  // const itemQuantity = useSelector(selectCartQuantity);
+  const itemQuantity = useSelector(selectCartQuantity);
   function handleClick() {
     setOpen(open => !open);
   }
@@ -25,8 +25,8 @@ export default function Cart() {
   return (
     <>
       <Button onClick={handleClick}>
-        <Badge badgeContent={0} color='warning'>
-          <CartIcon src='/images/icons/cart.svg' alt='cart icon' />
+        <Badge badgeContent={itemQuantity} color='warning'>
+          <CartIcon src='/images/icons/basket-1.svg' alt='cart icon' />
         </Badge>
       </Button>
       <Drawer anchor='right' open={open} onClose={handleClick}>

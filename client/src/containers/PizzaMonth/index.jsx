@@ -1,4 +1,4 @@
-import { Grid, Container } from '@mui/material';
+import { Grid } from '@mui/material';
 import {
   Pizza,
   PizzaOfTheMonthSection,
@@ -9,6 +9,7 @@ import {
   Wrapper,
   GridSection,
 } from './styles';
+import { Link } from 'react-router-dom';
 import { Heading } from '../../components';
 
 export default function PizzaOfMonthContainer() {
@@ -23,7 +24,7 @@ export default function PizzaOfMonthContainer() {
         <Grid container spacing={2}>
           <Grid item md={6}>
             <Subheader>
-              <Outline> Notorious</Outline> P.I.E
+              Notorious <Outline>P.I.E</Outline>
             </Subheader>
             <Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -33,7 +34,9 @@ export default function PizzaOfMonthContainer() {
               reprehenderit in voluptate velit esse cillum dolore eu fugiat
               nulla pariatur.
             </Text>
-            <StyledButton>Shop Now</StyledButton>
+            <Link to='/menu/626d90f6b78a55e39a90bf32'>
+              <StyledButton>Shop Now</StyledButton>
+            </Link>
           </Grid>
           <GridSection item md={6}>
             <Pizza src='/images/bp-img-3.png' alt='Pizza of the month' />

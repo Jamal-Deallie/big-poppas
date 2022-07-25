@@ -7,7 +7,7 @@ import {
   Outline,
 } from './styles';
 import { useLocation } from 'react-router-dom';
-import { Typography, Container} from '@mui/material';
+import { Container } from '@mui/material';
 import {
   ProductListContainer,
   SearchListContainer,
@@ -41,9 +41,15 @@ export default function ProductContainer() {
     <ProductSection>
       <ContentContainer>
         <HeadingContainer>
-          <Heading>
-            <Outline> Ready</Outline> to Pie ?
-          </Heading>
+          {subheader === 'search' ? (
+            <Heading>
+              <Outline>Search</Outline> Results
+            </Heading>
+          ) : (
+            <Heading>
+              <Outline> Ready</Outline> to Pie ?
+            </Heading>
+          )}
         </HeadingContainer>
         <Container>{Products()}</Container>
       </ContentContainer>

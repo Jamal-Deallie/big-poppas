@@ -16,7 +16,7 @@ export const Heading = styled(Typography)`
 export const FeaturedSection = styled(Box)(({ theme }) => ({
   width: '100%',
   background: theme.palette.secondary.main,
-  padding: '10.5rem 0',
+  padding: '5.5rem 0',
 }));
 
 export const Outline = styled('span')`

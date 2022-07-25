@@ -1,14 +1,14 @@
 import { styled } from '@mui/system';
 import { Grid, Typography, Button } from '@mui/material';
 
-export const PizzaOfTheMonthSection = styled('div')`
-  width: 100%;
-  background: #e9e7dc;
-  padding: 12.5rem 0;
-`;
+export const PizzaOfTheMonthSection = styled('section')(({ theme }) => ({
+  width: '100%',
+  background: theme.palette.secondary.main,
+  padding: '5.5rem 0',
+}));
+
 export const Pizza = styled('img')`
-  max-width: 50rem;
-  margin-top: 7.5rem;
+  width: 100%;
 `;
 
 export const Wrapper = styled('div')`
@@ -27,9 +27,10 @@ export const Subheader = styled(Typography)`
   color: #1c1c1c;
 `;
 
-export const Outline = styled('span')`
-  color: #d14334;
-`;
+export const Outline = styled('span')(({ theme }) => ({
+  '-webkit-text-stroke': `0.2rem ${theme.palette.warning.main}`,
+  '-webkit-text-fill-color': theme.palette.secondary.main,
+}));
 
 export const Text = styled(Typography)`
   font-family: 'open Sans', sans-serif;
@@ -66,4 +67,5 @@ export const GridSection = styled(Grid)`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  padding: calc(0.8rem + 1.5625vw);
 `;

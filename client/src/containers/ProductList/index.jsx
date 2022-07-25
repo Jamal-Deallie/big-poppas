@@ -26,7 +26,7 @@ export default function ProductListContainer() {
       trigger: ref.current,
       start: 'top 80%',
       end: 'bottom 20%',
-      toggleActions: 'play none none reverse',
+      toggleActions: 'play none none reset',
       invalidateOnRefresh: true,
       onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: 0.1 }),
     });

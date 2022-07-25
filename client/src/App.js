@@ -26,13 +26,11 @@ function App() {
       <Routes>
         <Route path='/' element={<MainLayout />}>
           <Route index element={<HomePage />} />
-          <Route path='menu' element={<ProductPage />}>
-            <Route path=':_id' element={<ProductItemPage />} />
-         
-          </Route>
+          <Route path='menu' element={<ProductPage />} />
+          <Route path='menu/:_id' element={<ProductItemPage />} />
           <Route path='search' element={<SearchResultsPage />} />
           <Route path='about' element={<AboutPage />} />
-          <Route path='contactus' element={<ContactPage />} />
+          <Route path='contact' element={<ContactPage />} />
           <Route path='faqs' element={<FaqsPage />} />
           <Route path='register' element={<RegisterPage />} />
           <Route path='location' element={<LocationPage />} />

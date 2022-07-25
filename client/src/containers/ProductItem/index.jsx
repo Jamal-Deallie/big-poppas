@@ -1,53 +1,57 @@
-import { useParams, useNavigate } from 'react-router-dom';
-import { Container, Grid, Typography, Divider } from '@mui/material';
+import { useParams } from 'react-router-dom';
+import { Container, Grid, Divider, CircularProgress, Box } from '@mui/material';
 import {
   useGetProductsByIdQuery,
   selectProductById,
 } from '../../features/product/productSlice';
-import { useSelector, useDispatch } from 'react-redux';
-import { addItem } from '../../features/cart/cartSlice';
-import { ProductItemSection, GridSection, Text, Heading,IconContainer } from './styles';
+import { useSelector } from 'react-redux';
+import { ProductItemSection, Text, Heading, CustomDivider } from './styles';
 import { ATCButton } from '../../components';
 
 export default function ProductItemContainer() {
   const { _id } = useParams();
-
-  const dispatch = useDispatch();
-
   const { isLoading, isSuccess, isError, error } = useGetProductsByIdQuery(_id);
-
   const loadedProduct = useSelector(state => selectProductById(state, _id));
 
   let product;
 
-
-
   if (isLoading) {
-    product = <div>...is Loading</div>;
+    product = (
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          height: '100vh',
+          width: '100%',
+          background: 'primary.main',
+        }}>
+        <CircularProgress color='secondary' />
+      </Box>
+    );
   } else if (isSuccess) {
     const { name, image, price, description } = loadedProduct;
     product = (
       <ProductItemSection>
-        <Grid container>
-          <Grid item md={6}>
-            <img src={image} alt={name} />
+        <Container>
+          <Grid container>
+            <Grid item md={6}>
+              <img src={image} alt={name} />
+            </Grid>
+            <Grid item md={6}>
+              <Box sx={{ pt: 2.5 }}>
+                <Heading>{name}</Heading>
+                <Text $fontSz={'2.4rem'}>${price}</Text>
+
+                <CustomDivider />
+
+                <Text>Made With:</Text>
+                <Text>{description}</Text>
+                <ATCButton items={loadedProduct} />
+              </Box>
+            </Grid>
           </Grid>
-          <Grid item md={6}>
-            <Heading>{name}</Heading>
-            <Text $fontSz={'2.4rem'}>${price}</Text>
-
-            <Divider />
-            <IconContainer>
-            <img src="/images/star.svg" alt="Health Facts"/>
-
-
-
-            </IconContainer>
-   
-            <Text>{description}</Text>
-            <ATCButton items={loadedProduct} />
-          </Grid>
-        </Grid>
+        </Container>
       </ProductItemSection>
     );
   } else if (isError) {

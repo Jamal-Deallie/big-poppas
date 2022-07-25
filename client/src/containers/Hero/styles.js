@@ -1,5 +1,5 @@
 import { styled } from '@mui/system';
-import { Typography, Button, Grid } from '@mui/material';
+import { Typography, Button, Grid, Box } from '@mui/material';
 
 export const Wrap = styled('div')`
   max-width: 150rem;
@@ -7,23 +7,25 @@ export const Wrap = styled('div')`
   padding: 7.5rem 0;
 `;
 
+export const InnerContainer = styled(Box)({
+  maxWidth: '150rem',
+  padding: '10.5rem calc(1rem + 1.5625vw)',
+  width: '100%',
+  margin: '0 auto',
+});
+
 export const StyledSection = styled('section')`
   background: #d14334;
   width: 100%;
-  padding: 5rem 1rem;
 `;
 
 export const StyledHeading = styled(Typography)`
   font-family: Thunder;
   font-size: clamp(3.38rem, calc(0.88rem + 13.47vw), 11.77rem);
-  padding: 1rem;
   line-height: 1;
   letter-spacing: 0.25rem;
   text-transform: uppercase;
-  width: 20ch;
-
   & span {
-    position: relative;
     color: #e9e7dc;
   }
 `;
@@ -57,13 +59,30 @@ export const StyledButton = styled(Button)`
 `;
 
 export const Image = styled('img')`
-  padding: 1rem;
   filter: brightness(95%);
+  height: 49rem;
+  display: block;
+  margin: 0 auto;
 `;
 
-export const GridContainer = styled(Grid)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-`;
+export const GridItem = styled(Grid)({
+  padding: 'calc(1rem + 1.5625vw)',
+  width: '100%',
+});
+
+export const GridContainer = styled(Grid)({
+  width: '100%',
+  margin: '0 auto',
+});
+
+export const GridImage = styled(Grid)({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  width: '100%',
+});
+
+export const TextContainer = styled(Box)({
+  overflow: 'hidden',
+  width: '60rem',
+});

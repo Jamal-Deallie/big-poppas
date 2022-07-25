@@ -10,37 +10,7 @@ export const Text = styled(Typography)`
   text-transform: uppercase;
 `;
 
-export const BottomSpot = styled('img')`
-  height: 6rem;
-  position: absolute;
-  right: 45%;
-  bottom: 20%;
-  transform: rotate(45deg);
-`;
 
-export const Spot = styled('img')`
-  &:nth-of-type(1) {
-    margin: 0;
-    height: 3rem;
-    position: absolute;
-    top: -20%;
-    left: -7%;
-    margin-right: -7%;
-    transform: translate(-7%, 0%);
-  }
-  &:nth-of-type(2) {
-    margin: 0;
-    width: 2.5rem;
-    position: absolute;
-    bottom: -4.5%;
-    right: 40%;
-    margin-left: -40%;
-    transform: translate(-40%, 100%) matrix(0, 1, -1, 0, 0, 0);
-  }
-`;
-
-// export const HeadingWrap = styled('div')`
-//   background: ${props => props.$color || '#1c1c1c'};
 //   max-width: 65rem;
 //   padding: 0 1rem;
 //   font-family: Thunder;

@@ -22,3 +22,4 @@ export { default as ProductList } from './ProductList';
 export { default as GetQuery } from './GetQuery';
 export { default as TextScroll } from './TextScroll';
 export { default as Search } from './Search';
+export { default as MobileMenu } from './MobileMenu';

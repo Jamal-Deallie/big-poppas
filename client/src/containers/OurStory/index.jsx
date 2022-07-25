@@ -1,17 +1,12 @@
 import {
   StorySection,
-  Text,
   HeadingContainer,
   Heading,
   Outline,
-  Crown,
   Image,
   ImageWrapper,
-  Spot,
-  BottomSpot,
   GridContainer,
   StyledButton,
-  HeadingWrap,
 } from './styles';
 import { Grid, Typography, Box } from '@mui/material';
 import { TextScroll } from '../../components';
@@ -23,11 +18,11 @@ export default function OurStoryContainer() {
         <HeadingContainer>
           <Heading>
             I <Outline>LOVE</Outline> It When You call me
-            <Outline>Big Poppa</Outline>
+            <Outline> Big Poppa</Outline>
           </Heading>
         </HeadingContainer>
-        <GridContainer container>
-          <Grid item lg={6}>
+        <GridContainer container sx={{ width: '100%' }}>
+          <Grid item md={6}>
             <Typography variant='body3'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -40,8 +35,8 @@ export default function OurStoryContainer() {
               <StyledButton sx={{ mt: '5.5rem' }}>Learn More</StyledButton>
             </Box>
           </Grid>
-          <ImageWrapper item lg={6}>
-            <Image src='/images/bp-img-1.png' alt='' />
+          <ImageWrapper item md={6}>
+            <Image src='/images/bp-img-1.png' alt='woman holding a pizza' />
           </ImageWrapper>
         </GridContainer>
       </StorySection>

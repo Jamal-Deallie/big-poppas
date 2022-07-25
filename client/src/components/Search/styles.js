@@ -1,6 +1,5 @@
 import { styled } from '@mui/material/styles';
 import { InputBase, Typography } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
 
 export const SearchSection = styled('div')(({ theme }) => ({
   width: '100%',
@@ -12,7 +11,9 @@ export const SearchSection = styled('div')(({ theme }) => ({
   alignItems: 'center',
 }));
 
-export const SearchInput = styled('div')(({ theme }) => ({}));
+export const SearchIcon = styled('img')({
+  height: '3rem',
+});
 
 export const SearchBar = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -87,12 +88,6 @@ export const CloseSearchBtn = styled('button')(({ theme }) => ({
 
 export const SubmitBtn = styled('button')(({ theme }) => ({
   display: 'none',
-}));
-
-export const Icon = styled(SearchIcon)(({ theme }) => ({
-  fontSize: 28,
-  transform: 'scaleX(-1)',
-  color: theme.palette.secondary.light,
 }));
 
 export const NavOption = styled(Typography, {

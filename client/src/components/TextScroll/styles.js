@@ -1,23 +1,30 @@
 import { styled } from '@mui/system';
-import { Box } from '@mui/material';
+import { Box, Container } from '@mui/material';
 
 export const TextWrapper = styled(Box)(({ theme }) => ({
   display: 'inline-flex',
   alignItems: 'center',
-  height: '25vh',
+  justifyContent: 'center',
+  height: '24vh',
   textOverflow: 'ellipsis',
   whiteSpace: 'pre',
   fontSize: 'clamp(96px, 16vh, 260px)',
-  padding: '0 64px',
   color: theme.palette.secondary.main,
   fontFamily: 'Thunder, sans-serif',
   textTransform: 'uppercase',
-  paddingBottom: '5rem',
+
+  [theme.breakpoints.down('md')]: {
+    display: 'none',
+  },
 }));
 
-export const ScrollWrapper = styled(Box)({
-
+export const ContentContainer = styled(Box)({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
 });
+
+export const ScrollWrapper = styled(Box)({});
 
 export const Outline = styled('span')`
   -webkit-text-stroke: 0.15rem #d14334;
@@ -39,5 +46,4 @@ export const SmileyContainer = styled(Box)({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  padding: '1rem',
 });
