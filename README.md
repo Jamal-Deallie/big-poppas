@@ -1,5 +1,5 @@
 <div align="center">
-<h1 align="center">Big Poppas></h1>
+<h1 align="center">Big Poppas</h1>
 
 <p align="center">A MERN Pizzeria Application inspired by Notorious B.I.G with JWT Authentication, GreenSock Animation, and stripe add to cart & checkout </p>
 <p align="center"><a href="https://github.com/Jamal-Deallie/big-poppas.git">View Demo</a>
@@ -9,7 +9,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Big Poppas][product-screenshot]](client/public/images/screenshots.png)
+![image](https://cloud.githubusercontent.com/assets/9053854/24495974/fbf2e0cc-1547-11e7-846c-25b5fac7f6b1.png)
 
 In my road to becoming a Full Stack developer, instead of coding a Clone Application, I decided to create my own application from scratch. The Application is inspired by the artist,Notorious BIG. The color scheme is from his first album, "Ready To Die". The database was created using MongoDB, and the server was created with Node & Express.
 
@@ -26,7 +26,6 @@ The Front End was created with Mui V 5, GSAP Animation, and RTK Query for state 
 ![Material Design](https://img.shields.io/static/v1?style=for-the-badge&message=Material+Design&color=757575&logo=Material+Design&logoColor=FFFFFF&label=)
 ![Material Design Icons](https://img.shields.io/static/v1?style=for-the-badge&message=Material+Design+Icons&color=2196F3&logo=Material+Design+Icons&logoColor=FFFFFF&label=)
 ![Stripe](https://img.shields.io/static/v1?style=for-the-badge&message=Stripe&color=008CDD&logo=Stripe&logoColor=FFFFFF&label=)
-
 ![MongoDB](https://img.shields.io/static/v1?style=for-the-badge&message=MongoDB&color=47A248&logo=MongoDB&logoColor=FFFFFF&label=)
 ![Node.js](https://img.shields.io/static/v1?style=for-the-badge&message=Node.js&color=339933&logo=Node.js&logoColor=FFFFFF&label=)
 ![Nodemon](https://img.shields.io/static/v1?style=for-the-badge&message=Nodemon&color=222222&logo=Nodemon&logoColor=76D04B&label=)
