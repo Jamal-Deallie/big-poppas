@@ -147,3 +147,7 @@ export const NavOption = styled(Typography, {
     display: 'none',
   },
 }));
+
+export const UserIcon = styled('img')({
+  height: '3rem',
+});

@@ -36,7 +36,10 @@ export default function OurStoryContainer() {
             </Box>
           </Grid>
           <ImageWrapper item md={6}>
-            <Image src='/images/bp-img-1.png' alt='woman holding a pizza' />
+            <Image
+              src='https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1658723444/big_poppas/story-pizza.webp'
+              alt='woman holding a pizza'
+            />
           </ImageWrapper>
         </GridContainer>
       </StorySection>

@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import {
   Nav,
   StyledContainer,
@@ -7,6 +6,7 @@ import {
   NavLinks,
   NavItems,
   NavOption,
+  UserIcon,
 } from './styles.js';
 import { Cart, SearchBar, Search, MobileMenu } from '../../components';
 import { navItems } from '../../shared/navItems';
@@ -43,7 +43,13 @@ export default function Navbar() {
           </NavItems>
           <NavOptions>
             <Search />
-            <NavLinks to='signin'>Account</NavLinks>
+            <Link to='signin'>
+              <UserIcon
+                src='/images/icons/user-1.svg'
+                alt='cart icon'
+                sx={{ mt: 1 }}
+              />
+            </Link>
             <Cart />
           </NavOptions>
         </Nav>

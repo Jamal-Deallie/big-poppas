@@ -74,11 +74,14 @@ export const HeadingWrap = styled(Box)(({ theme }) => ({
 
 export const Heading = styled(Typography)(({ theme }) => ({
   fontFamily: 'Thunder',
-  fontSize: 'clamp(3.38rem, calc(0.88rem + 13.47vw), 11.77rem)',
+  fontSize: '9.5rem',
   fontWeight: 'bold',
   textAlign: 'center',
   color: theme.palette.secondary.main,
   textTransform: 'uppercase',
+  [theme.breakpoints.down('md')]:{
+    fontSize: '6.4rem',
+  }
 }));
 
 export const HeadingContainer = styled(Box)({

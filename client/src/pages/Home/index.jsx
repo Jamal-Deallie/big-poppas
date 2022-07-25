@@ -15,7 +15,6 @@ export default function HomePage() {
       <FeaturedInContainer />
       <OurStoryContainer />
       <NutritionContainer />
-      <PizzaOfMonthContainer />
       <CTAContainer />
     </>
   );

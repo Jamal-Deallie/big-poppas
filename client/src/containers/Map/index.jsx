@@ -16,7 +16,10 @@ export default function MapContainer() {
           Friday-Saturday: 11am-3am
         </Text>
 
-        <Map src='images/bp-map.png' alt='Big Poppas Location' />
+        <Map
+          src='https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1658723446/big_poppas/map.webp'
+          alt='Big Poppas Location'
+        />
       </MapInner>
     </MapSection>
   );

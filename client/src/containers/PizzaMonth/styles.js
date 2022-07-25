@@ -7,9 +7,7 @@ export const PizzaOfTheMonthSection = styled('section')(({ theme }) => ({
   padding: '5.5rem 0',
 }));
 
-export const Pizza = styled('img')`
-  width: 100%;
-`;
+export const Pizza = styled('img')({ width: '45rem' });
 
 export const Wrapper = styled('div')`
   margin: 0 auto;
@@ -65,7 +63,7 @@ export const StyledButton = styled(Button)`
 
 export const GridSection = styled(Grid)`
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-end;
   padding: calc(0.8rem + 1.5625vw);
 `;

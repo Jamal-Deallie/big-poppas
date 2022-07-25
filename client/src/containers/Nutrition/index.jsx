@@ -66,7 +66,11 @@ export default function NutritionContainer() {
           })}
         </Nutrition>
         <PizzaContainer item md={6}>
-          <Pizza src='/images/pizza.png' alt='pizza slice' ref={imageRef} />
+          <Pizza
+            src='https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1658723447/big_poppas/nutrition-pizza.webp'
+            alt='pizza slice'
+            ref={imageRef}
+          />
         </PizzaContainer>
         <Nutrition item md={3}>
           {items.slice(2, 4).map(item => {
