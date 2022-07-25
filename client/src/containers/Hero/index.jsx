@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useLayoutEffect } from 'react';
 import {
   StyledSection,
   StyledHeading,
@@ -21,7 +21,7 @@ export default function HeroContainer() {
   const tl = useRef(null);
   const containerRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(SplitText);
     ScrollTrigger.saveStyles(containerRef.current);
