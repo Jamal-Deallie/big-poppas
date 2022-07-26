@@ -31,7 +31,6 @@ export default function TextScroll({ children }) {
           scrollTrigger: {
             trigger: scrollWrapper.current,
             start: 'top top',
-            end: 'bottom top',
             end: '400%',
             pin: true,
             scrub: true,
@@ -43,7 +42,7 @@ export default function TextScroll({ children }) {
     return () => {
       animation.kill();
     };
-  }, [wrappers.current]);
+  }, [wrappers, scrollWrapper]);
 
   useEffect(() => {
     rotationAnimation(smileyFace.current);

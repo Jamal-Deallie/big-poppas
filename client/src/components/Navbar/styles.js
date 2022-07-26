@@ -14,7 +14,7 @@ export const Nav = styled('nav')(({ theme }) => ({
   borderBottom: `${theme.palette.secondary.main} 1px solid`,
   zIndex: 2,
   [theme.breakpoints.down('md')]: {
-    padding: '0 2rem',
+    padding: '0 1rem',
   },
 }));
 
@@ -23,7 +23,7 @@ export const StyledContainer = styled(Box)({
 });
 
 export const Logo = styled('img')(({ theme }) => ({
-  width: '5rem',
+  width: '4rem',
   flex: 1,
   [theme.breakpoints.down('md')]: {
     margin: 0,
@@ -49,11 +49,12 @@ export const NavItems = styled(Box)({
 export const NavOptions = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
+  justifyContent: 'center',
   width: 'auto',
   gap: '2.5rem',
   cursor: 'pointer',
   [theme.breakpoints.down('md')]: {
-    gap: '2rem',
+    gap: '1rem',
   },
 }));
 
@@ -148,6 +149,9 @@ export const NavOption = styled(Typography, {
   },
 }));
 
-export const UserIcon = styled('img')({
+export const UserIcon = styled('img')(({ theme }) => ({
   height: '3rem',
-});
+  [theme.breakpoints.down('md')]: {
+    display: 'none',
+  },
+}));

@@ -27,9 +27,6 @@ export const CustomInput = styled(TextField)(({ theme }) => ({
     color: theme.palette.primary.main,
   },
 
-  '& ::-webkit-calendar-picker-indicator': {
-    filter: 'invert(100%)',
-  },
 }));
 
 export const Text = styled(Typography)(({ theme }) => ({

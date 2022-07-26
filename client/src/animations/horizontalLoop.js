@@ -1,7 +1,6 @@
 import { gsap } from 'gsap';
 
 export const horizontalLoop = (items, config) => {
-  console.log(items);
   let tl = gsap.timeline({
       repeat: config.repeat,
       paused: config.paused,

@@ -1,4 +1,4 @@
-import { Container, Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import { AboutSection, Text, Image, Wrap, GridContainer } from './styles';
 import { Heading } from '../../components';
 export default function AboutContainer() {

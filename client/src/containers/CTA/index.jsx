@@ -8,23 +8,49 @@ import {
   Outline,
   CustomButton,
 } from './styles';
-import { useRef, useCallback } from 'react';
-
+import { useState } from 'react';
+import { Typography, Box } from '@mui/material';
+import { useNewsLetterMutation } from '../../features/newsletter/newsLetterSlice';
 export default function CTAContainer() {
-  const emailInputElement = useRef();
+  // const emailInputElement = useRef();
 
-  const formHandler = useCallback(
-    () => event => {
-      event.preventDefault();
+  // const formHandler = useCallback(
+  //   () => event => {
+  //     event.preventDefault();
 
-      const data = {
-        email: emailInputElement.current?.value,
-      };
+  //     const data = {
+  //       email: emailInputElement.current?.value,
+  //     };
 
-   
-    },
-    []
-  );
+  //   },
+  //   []
+  // );
+
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+  const [newsLetter, { isSuccess }] = useNewsLetterMutation();
+
+  const handleChange = event => {
+    setEmail(event.target.value);
+  };
+
+  if (isSuccess) {
+    setEmail('');
+  }
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+
+    if (email) {
+      try {
+        await newsLetter({
+          email,
+        }).unwrap();
+      } catch (err) {
+        setError('Submission Failed');
+      }
+    }
+  };
 
   return (
     <CTASection>
@@ -32,21 +58,43 @@ export default function CTAContainer() {
         <Heading>
           JOIN OUR <Outline>NEWSLETTER </Outline>
         </Heading>
+        {error && (
+          <Box>
+            <Typography variant='body2' sx={{ color: 'secondary.main' }}>
+              {error}
+            </Typography>
+          </Box>
+        )}
         <Subheader>
           Sign up to stay up to date with the latest announcements.
         </Subheader>
-        <Form sx={{ m: 1, width: '15ch' }}>
+        <Form onSubmit={handleSubmit} method='POST'>
           <EmailInput
-            id='outlined-uncontrolled'
             type='email'
-            label='Email'
+            label='Email Address'
             variant='standard'
-            color='primary'
-            ref={emailInputElement}
+            fullWidth
+            onChange={e => setEmail(e.target.value)}
+            value={email}
           />
-          <CustomButton>Submit</CustomButton>
+          <CustomButton type='submit' fullWidth>
+            Submit
+          </CustomButton>
         </Form>
       </ContentContainer>
     </CTASection>
   );
 }
+
+// fullWidth
+// id='email'
+// label='Email Address'
+// name='email'
+// onChange={e => setEmail(e.target.value)}
+// value={email}
+// inputProps={{
+//   autoComplete: 'off',
+// }}
+// InputLabelProps={{
+//   shrink: true,
+// }}

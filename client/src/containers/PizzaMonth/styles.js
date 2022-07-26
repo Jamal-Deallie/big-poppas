@@ -26,8 +26,8 @@ export const Subheader = styled(Typography)`
 `;
 
 export const Outline = styled('span')(({ theme }) => ({
-  '-webkit-text-stroke': `0.2rem ${theme.palette.warning.main}`,
-  '-webkit-text-fill-color': theme.palette.secondary.main,
+  WebkitTextStroke: `0.2rem ${theme.palette.warning.main}`,
+  WebkitTextFillColor: theme.palette.secondary.main,
 }));
 
 export const Text = styled(Typography)`

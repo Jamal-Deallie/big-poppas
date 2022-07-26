@@ -1,11 +1,5 @@
 import { styled } from '@mui/material/styles';
-import {
-  Container,
-  Typography,
-  TextField,
-  FormControl,
-  Button,
-} from '@mui/material';
+import { Container, Typography, TextField, Button } from '@mui/material';
 
 export const CTASection = styled('div')`
   font-family: Thunder;
@@ -49,7 +43,9 @@ export const ContentContainer = styled(Container)`
   flex-direction: column;
 `;
 
-export const EmailInput = styled(TextField)({
+export const EmailInput = styled(TextField)(({ theme }) => ({
+  verticalAlign: 'middle',
+  color: ' #e9e7dc',
   '& label.Mui-focused': {
     color: ' #e9e7dc',
   },
@@ -74,11 +70,12 @@ export const EmailInput = styled(TextField)({
   '& .MuiInput-underline:focused': {
     borderBottomColor: ' #e9e7dc',
   },
-});
+  '& .MuiInputBase-root': {
+    color: theme.palette.secondary.main,
+  },
+}));
 
-export const Form = styled(FormControl)`
-  color: #e9e7dc;
-`;
+export const Form = styled('form')({ margin: 1, width: '15ch' });
 
 export const SVG = styled('svg')`
   width: 30rem;
@@ -97,7 +94,6 @@ export const StyledContainer = styled(Container)`
 `;
 
 export const CustomButton = styled(Button)`
-  margin-top: 7.5rem;
   font-family: 'open Sans', sans-serif;
   font-size: 16px;
   letter-spacing: 2px;

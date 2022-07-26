@@ -20,8 +20,6 @@ export default function Cart() {
     setOpen(open => !open);
   }
 
-  // console.log(itemQuantity);
-
   return (
     <>
       <Button onClick={handleClick}>

@@ -43,12 +43,12 @@ export const Links = styled(Link, {
   lineHeight: 1.2,
   letterSpacing: '.2rem',
   padding: 'calc(8px + 1.5625vw)',
-  '-webkit-text-stroke': `0.15rem ${theme.palette.primary.main}`,
-  '-webkit-text-fill-color': theme.palette.warning.main,
+  WebkitTextStroke: `0.15rem ${theme.palette.primary.main}`,
+  WebkitTextFillColor: theme.palette.warning.main,
   '&:hover': {
     color: theme.palette.secondary.main,
-    '-webkit-text-fill-color': theme.palette.primary.main,
-    '-webkit-text-stroke': 0,
+    WebkitTextFillColor: theme.palette.primary.main,
+    WebkitTextStroke: 0,
   },
   [theme.breakpoints.down('md')]: {
     display: 'block',

@@ -16,7 +16,6 @@ export default function ATCButton({ items }) {
   const dispatch = useDispatch();
 
   const handleAddToCart = product => {
-    console.log({ product });
     if (product) {
       dispatch(
         addItem({
