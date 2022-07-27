@@ -12,7 +12,6 @@ export const Image = styled('img')(({ theme }) => ({
   objectFit: 'cover',
   filter: 'grayscale(100%)',
   [theme.breakpoints.down('md')]: {
-    marginBottom: '3.5rem',
     width: '100%',
   },
 }));
@@ -69,6 +68,6 @@ export const HeadingSection = styled(Box)({
 export const GridText = styled(Grid)(({ theme }) => ({
   marginTop: '8rem',
   [theme.breakpoints.down('md')]: {
-    marginTop: 'none',
+    marginTop: '5rem',
   },
 }));

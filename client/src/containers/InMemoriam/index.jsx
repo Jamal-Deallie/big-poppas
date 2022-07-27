@@ -1,25 +1,24 @@
-import { Container, Grid, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import {
-  Section,
-  Text,
   Image,
-  Wrap,
+  InnerContainer,
   GridContainer,
   GridItem,
   Heading,
   Outline,
+  MemoriamSection,
 } from './styles';
 
 export default function InMemoriamContainer() {
   return (
-    <Section>
-      <Wrap>
-        <Heading>
-          It was all a <Outline>Dream</Outline>
-        </Heading>
+    <MemoriamSection>
+      <InnerContainer>
+        <Typography variant='header4' sx={{ textAlign: 'center' }}>
+          It was all a <span>Dream</span>
+        </Typography>
         <GridContainer container spacing={1}>
           <GridItem item md={6}>
-            <Text>
+            <Typography variant='body3' color='secondary'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
               elementum dui felis. Nulla facilisi. Nunc tempor interdum elit, a
               euismod orci mollis eget. In non enim at ipsum aliquam ornare.
@@ -27,7 +26,7 @@ export default function InMemoriamContainer() {
               enim. Nunc maximus ligula ante, ac rutrum enim vestibulum
               tincidunt. Nullam diam dolor, rhoncus eget justo non, dictum
               dictum magna.
-            </Text>
+            </Typography>
           </GridItem>
           <GridItem item md={6}>
             <Image
@@ -36,7 +35,7 @@ export default function InMemoriamContainer() {
             />
           </GridItem>
         </GridContainer>
-      </Wrap>
-    </Section>
+      </InnerContainer>
+    </MemoriamSection>
   );
 }

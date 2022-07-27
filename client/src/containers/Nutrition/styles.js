@@ -16,15 +16,6 @@ export const ContentContainer = styled(Grid)({
   justifyContent: 'center',
 });
 
-export const Subheader = styled(Typography)`
-  font-family: 'open Sans', sans-serif;
-  font-size: 1.8rem;
-  max-width: 60rem;
-  text-align: center;
-  margin: 0 auto;
-  padding: 7.5rem 0;
-`;
-
 export const Pizza = styled('img')({
   margin: '0 auto',
   display: 'block',
@@ -79,9 +70,13 @@ export const Heading = styled(Typography)(({ theme }) => ({
   textAlign: 'center',
   color: theme.palette.secondary.main,
   textTransform: 'uppercase',
-  [theme.breakpoints.down('md')]:{
+  letterSpacing: '.25rem',
+  [theme.breakpoints.down('md')]: {
     fontSize: '6.4rem',
-  }
+  },
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '5.2rem',
+  },
 }));
 
 export const HeadingContainer = styled(Box)({

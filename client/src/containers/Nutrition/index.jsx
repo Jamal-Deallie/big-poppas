@@ -21,6 +21,7 @@ import useArrayRef from '../../hooks/useArrayRef';
 export default function NutritionContainer() {
   const imageRef = useRef(null);
   const [validation, setValidation] = useArrayRef();
+
   useEffect(() => {
     yoyoAnimation(imageRef.current);
   }, []);
@@ -28,6 +29,7 @@ export default function NutritionContainer() {
   useEffect(() => {
     rotationAnimation(validation.current);
   }, [validation]);
+  
   return (
     <NutritionSection>
       <HeadingSection>
