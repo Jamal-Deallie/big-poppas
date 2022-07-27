@@ -160,7 +160,7 @@ exports.signup = catchAsync(async (req, res, next) => {
   //abstract items from body
   const { firstName, lastName, email, password, passwordConfirm } = req.body;
   //if required items are undefined send error
-
+  console.log(req.body);
   if (!email || !password || !passwordConfirm || !firstName || !lastName) {
     return next(new AppError('Please complete all required fields!', 400));
   }
@@ -171,6 +171,7 @@ exports.signup = catchAsync(async (req, res, next) => {
     return next(new AppError('The email already exists', 409));
   }
 
+  console.log(user);
   try {
     const newUser = await User.create({
       firstName: firstName,
@@ -179,9 +180,10 @@ exports.signup = catchAsync(async (req, res, next) => {
       password: password,
       passwordConfirm: passwordConfirm,
     });
+    console.log(newUser);
     createSendToken(newUser, 201, req, res);
   } catch (err) {
-    alert('signup error', err);
+    console.error('signup error', err);
     res.status(500).json({
       errorMessage: `Server Error: ${err.message}`,
     });

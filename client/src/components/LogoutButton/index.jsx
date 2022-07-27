@@ -15,7 +15,7 @@ export default function LogoutButton() {
   }
 
   return (
-    <Button variant='main' onClick={handleLogout}>
+    <Button variant='main' onClick={handleLogout} fullWidth>
       Logout
     </Button>
   );

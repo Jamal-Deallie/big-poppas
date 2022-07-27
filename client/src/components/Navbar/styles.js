@@ -11,7 +11,7 @@ export const Nav = styled('nav')(({ theme }) => ({
   padding: '0 5rem',
   position: 'relative',
   justifyContent: 'space-between',
-  borderBottom: `${theme.palette.secondary.main} 1px solid`,
+  // borderBottom: `${theme.palette.secondary.main} 1px solid`,
   zIndex: 2,
   [theme.breakpoints.down('md')]: {
     padding: '0 1rem',

@@ -23,3 +23,4 @@ export { default as MobileMenu } from './MobileMenu';
 export { default as LogoutButton } from './LogoutButton';
 export { default as RedirectRoute } from './RedirectRoute';
 export { default as RequireAuth } from './RequireAuth';
+export { default as Panels } from './Panels';

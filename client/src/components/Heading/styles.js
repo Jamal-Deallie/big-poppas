@@ -1,5 +1,5 @@
 import { styled } from '@mui/system';
-import { Container, Typography, Grid, Button } from '@mui/material';
+import { Container, Typography, Grid, Button, Box } from '@mui/material';
 
 export const Text = styled(Typography)`
   font-family: Thunder;
@@ -9,7 +9,6 @@ export const Text = styled(Typography)`
   color: #e9e7dc;
   text-transform: uppercase;
 `;
-
 
 //   max-width: 65rem;
 //   padding: 0 1rem;
@@ -38,13 +37,12 @@ export const Text = styled(Typography)`
 //   width: auto;
 // `;
 
-export const HeadingWrap = styled('div', {
-  shouldForwardProp: prop => prop !== '$matrix',
-})(({ theme, $matrix }) => ({
-  backgroundColor: '#1c1c1c',
+export const HeadingWrap = styled(Box)(({ theme }) => ({
+  backgroundColor: theme.palette.primary.main,
   maxWidth: '65rem',
   padding: '0 1rem',
   fontFamily: 'Thunder',
+  overflow: 'hidden',
 }));
 
 export const HeadingSection = styled(Container)({
@@ -60,10 +58,11 @@ export const HeadingContainer = styled('div', {
   justifyContent: 'center',
   alignItems: 'center',
   flexDirection: 'column',
+
   '& > :nth-of-type(1)': {
     transform: $matrix1
       ? $matrix1
-      : 'matrix(0.996195,0.0871557,-0.0871557,0.996195,-42.8364,-10.7477)',
+      : 'matrix(0.99863, 0.052336, -0.052336, 0.99863, 0, 0)',
   },
   '& > :nth-of-type(2)': {
     transform: $matrix2

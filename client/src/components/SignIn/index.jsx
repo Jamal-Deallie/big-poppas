@@ -1,12 +1,11 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import {
-  CustomButton,
   LoginSection,
-  FormContainer,
   CustomInput,
   CustomLink,
   LinkContainer,
   FormWrap,
+  FormContainer,
 } from './styles';
 import { useNavigate, useLocation } from 'react-router-dom';
 import {
@@ -16,9 +15,7 @@ import {
   IconButton,
   Box,
   Typography,
-  Container,
 } from '@mui/material';
-import { Heading } from '..';
 import { useSignInUserMutation } from '../../features/user/userSlice';
 import { setCredentials } from '../../features/auth/authSlice';
 import { useDispatch } from 'react-redux';
@@ -48,7 +45,7 @@ export default function SignIn() {
     [formData]
   );
 
-  const [signInUser, { isLoading, isSuccess, data }] = useSignInUserMutation();
+  const [signInUser, { isSuccess, data }] = useSignInUserMutation();
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -59,7 +56,6 @@ export default function SignIn() {
     }
   };
 
-  
   useEffect(() => {
     if (isSuccess) {
       dispatch(
@@ -71,14 +67,16 @@ export default function SignIn() {
       });
       navigate(from, { replace: true });
     }
-  }, [isSuccess, dispatch, setCredentials, setFormData, navigate]);
+  }, [isSuccess, dispatch, setFormData, navigate, data, from]);
 
   return (
     <LoginSection>
-      <Container sx={{ position: 'relative', height: '60rem' }}>
+      <FormContainer>
         <FormWrap>
-          <Box sx={{ ml: 9 }} fullWidth>
-            <Heading firstLine={'SIGN IN'} />
+          <Box sx={{ textAlign: 'center' }}>
+            <Typography variant='header3'>
+              Sign <span>In</span>
+            </Typography>
           </Box>
           <Box sx={{ textAlign: 'center', mt: 2.5 }}>
             {error && (
@@ -146,14 +144,14 @@ export default function SignIn() {
                 Submit
               </Button>
               <LinkContainer>
-                <CustomLink to='/forgotpassword'>Forgot Password</CustomLink>
+                <CustomLink to='forgotpassword'>Forgot Password</CustomLink>
                 <Typography>|</Typography>
                 <CustomLink to='/signup'>Create An Account</CustomLink>
               </LinkContainer>
             </Stack>
           </Box>
         </FormWrap>
-      </Container>
+      </FormContainer>
     </LoginSection>
   );
 }

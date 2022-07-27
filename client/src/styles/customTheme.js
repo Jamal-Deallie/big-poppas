@@ -44,6 +44,36 @@ export const customTheme = createTheme({
         },
       },
     },
+    MuiButton: {
+      variants: [
+        {
+          props: { variant: 'main' },
+          style: {
+            background: secondaryColor,
+            color: primaryColor,
+            fontSize: '1.6rem',
+            fontFamily: 'open-sans,sans-serif',
+            fontWeight: 400,
+            lineHeight: 1.2,
+            padding: '1.75rem 4rem',
+            border: `2px solid ${primaryColor}`,
+            borderRadius: '8px',
+            boxSizing: 'border-box',
+            boxShadow:
+              '1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,5px 5px 0px 0px',
+            '&:hover': {
+              boxShadow: 'none',
+              background: secondaryColor,
+            },
+          },
+        },
+      ],
+      defaultProps: {
+        disableElevation: true,
+        disableFocusRipple: true,
+        disableRipple: true,
+      },
+    },
   },
   typography: {
     fontFamily: ['Thunder, sans-serif', 'open-sans, sans-serif'].join(','),
@@ -62,6 +92,24 @@ export const customTheme = createTheme({
       fontFamily: 'Thunder, sans-serif',
       textTransform: 'capitalize',
       fontSize: '4.8rem',
+    },
+    header3: {
+      fontFamily: 'Thunder, sans-serif',
+      fontSize: 'clamp(3.38rem, calc(0.88rem + 13.47vw), 11.77rem)',
+      lineHeight: 1,
+      letterSpacing: '0.25rem',
+      textTransform: 'uppercase',
+      fontWeight: 400,
+      WebkitFontSmoothing: 'subpixel-antialiased',
+      WebkitTextStroke: '0.5px rgba(0, 0, 0, 0.1)',
+      WebkitTextFillColor: primaryColor,
+      display: 'block',
+      '& span': {
+        color: secondaryColor,
+        WebkitTextStroke: `.15rem ${primaryColor}`,
+        WebkitTextFillColor: warningColor,
+        WebkitFontSmoothing: 'subpixel-antialiased',
+      },
     },
     subheader1: {
       fontSize: '3.2rem',
@@ -124,38 +172,6 @@ export const customTheme = createTheme({
       },
       '&.active': {
         color: warningColor,
-      },
-    },
-  },
-  components: {
-    MuiButton: {
-      variants: [
-        {
-          props: { variant: 'main' },
-          style: {
-            background: secondaryColor,
-            color: primaryColor,
-            fontSize: '1.6rem',
-            fontFamily: 'open-sans,sans-serif',
-            fontWeight: 400,
-            lineHeight: 1.2,
-            padding: '1.75rem 4rem',
-            border: `2px solid ${primaryColor}`,
-            borderRadius: '8px',
-            boxSizing: 'border-box',
-            boxShadow:
-              '1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,5px 5px 0px 0px',
-            '&:hover': {
-              boxShadow: 'none',
-              background: secondaryColor,
-            },
-          },
-        },
-      ],
-      defaultProps: {
-        disableElevation: true,
-        disableFocusRipple: true,
-        disableRipple: true,
       },
     },
   },

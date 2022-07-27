@@ -1,5 +1,5 @@
 import { Text, HeadingContainer, HeadingWrap, HeadingSection } from './styles';
-import { Container } from '@mui/material';
+
 export default function Heading({ firstLine, secondLine, matrix2, matrix1 }) {
   return (
     <HeadingSection>

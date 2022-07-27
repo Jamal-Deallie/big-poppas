@@ -8,10 +8,12 @@ const userSchema = new mongoose.Schema(
     firstName: {
       type: String,
       default: '',
+      unique: false,
     },
     lastName: {
       type: String,
       default: '',
+      unique: false,
     },
     email: {
       type: String,
@@ -77,7 +79,6 @@ userSchema.methods.correctPassword = async function (
 ) {
   console.log(candidatePassword, userPassword);
   return await bcrypt.compare(candidatePassword, userPassword);
-
 };
 
 userSchema.pre('save', function (next) {

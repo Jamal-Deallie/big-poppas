@@ -1,48 +1,11 @@
 import { styled } from '@mui/material/styles';
-import { Container, Typography, TextField, Button, Box } from '@mui/material';
+import { Container, TextField, Box } from '@mui/material';
+import { Link } from 'react-router-dom';
 
-export const RegisterSection = styled('div')(({ theme }) => ({
+export const RegisterSection = styled(Box)(({ theme }) => ({
   background: theme.palette.warning.main,
-  padding: '12.5rem 0',
+  padding: '10.5rem 0',
 }));
-
-export const RegisterWrap = styled('form')({
-  width: '45rem',
-  margin: '0 auto',
-});
-export const CustomButton = styled(Button)`
-  font-family: 'open Sans', sans-serif;
-  font-size: 16px;
-  letter-spacing: 2px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #1c1c1c;
-  cursor: pointer;
-  border: 3px solid;
-  padding: 1.2rem 1rem;
-  background: #e9e7dc;
-  min-width: 100%;
-  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
-    5px 5px 0px 0px;
-  position: relative;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  &:hover {
-    box-shadow: 0px 0px 0px 0px;
-    top: 5px;
-    left: 5px;
-  }
-`;
-
-export const FormWrap = styled(Container)`
-  padding-top: 7.5rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2.5rem;
-`;
 
 export const CustomInput = styled(TextField)({
   '& label.Mui-focused': {
@@ -71,27 +34,30 @@ export const CustomInput = styled(TextField)({
   },
 });
 
-export const Link = styled('p')`
-  cursor: pointer;
-  font-size: 1.2rem;
-
-  &:hover {
-    color: #e;
-  }
-`;
-
 export const CustomLink = styled(Link)(({ theme }) => ({
   color: theme.palette.primary.main,
   cursor: 'pointer',
   fontSize: '1.6rem',
-  transition: 'color 0.5s ease-in-out',
+  transition: 'color 0.2s ease-in-out',
+  fontWeight: 400,
   '&:hover': {
     color: theme.palette.secondary.main,
+    fontWeight: 400,
   },
 }));
 
-export const FormContainer = styled(Box)({
+export const FormWrap = styled(Box)(({ theme }) => ({
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '55rem',
+  padding: 'calc(.8rem + 1.5vw)',
+  height: '100%',
+}));
+
+export const FormContainer = styled(Container)({
   margin: '0 auto',
-  padding: 'calc(.8rem - 1.5vw)',
-  maxWidth: '50rem',
+  position: 'relative',
+  height: '80rem',
 });

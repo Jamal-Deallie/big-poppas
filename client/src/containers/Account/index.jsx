@@ -12,13 +12,7 @@ import {
 } from './styles';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/auth/authSlice';
-import { LogoutButton } from '../../components';
-
-const Panel = props => (
-  <div hidden={props.value !== props.index}>
-    <div>{props.children}</div>
-  </div>
-);
+import { LogoutButton, Panels } from '../../components';
 
 export default function FormContainer() {
   const [index, setIndex] = useState(0);
@@ -33,11 +27,20 @@ export default function FormContainer() {
       <AccountOuter>
         <HeadingWrap>
           {name && (
-            <Typography
-              variant='header1'
-              sx={{ textAlign: 'center' }}>{`Hello ${name}`}</Typography>
+            <>
+              <Typography variant='header3'>
+                <span> Hello</span> {`${name}`}
+              </Typography>
+            </>
           )}
-          <Box sx={{ width: '35rem' }}>
+          <Box
+            sx={{
+              width: '35rem',
+              mt: '4.5rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
             <LogoutButton />
           </Box>
           <CustomDivider />
@@ -51,15 +54,21 @@ export default function FormContainer() {
           </CustomTabs>
         </TabContainer>
         <PanelWrap>
-          <Panel value={index} index={0}>
-            <Typography variant='header1'>Account Details Test</Typography>
-          </Panel>
-          <Panel value={index} index={1}>
-            <Typography variant='header1'>Order History Test</Typography>
-          </Panel>
-          <Panel value={index} index={2}>
-            <Typography variant='header1'>Update Profile Test</Typography>
-          </Panel>
+          <Panels value={index} index={0}>
+            <Typography variant='body2' color='primary'>
+              Account Details Test
+            </Typography>
+          </Panels>
+          <Panels value={index} index={1}>
+            <Typography variant='body2' color='primary'>
+              Order History Test
+            </Typography>
+          </Panels>
+          <Panels value={index} index={2}>
+            <Typography variant='body2' color='primary'>
+              Update Profile Test
+            </Typography>
+          </Panels>
         </PanelWrap>
       </AccountOuter>
     </AccountSection>
