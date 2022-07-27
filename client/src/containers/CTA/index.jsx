@@ -50,9 +50,9 @@ export default function CTAContainer() {
             </Typography>
           </Box>
         )}
-        <Subheader>
+        <Typography color='secondary'>
           Sign up to stay up to date with the latest announcements.
-        </Subheader>
+        </Typography>
         <Form onSubmit={handleSubmit} method='POST'>
           <EmailInput
             type='email'
@@ -62,7 +62,11 @@ export default function CTAContainer() {
             onChange={e => setEmail(e.target.value)}
             value={email}
           />
-          <Button type='submit' fullWidth variant='secondary'>
+          <Button
+            type='submit'
+            fullWidth
+            variant='secondary'
+            sx={{ mt: '2.5rem' }}>
             Submit
           </Button>
         </Form>

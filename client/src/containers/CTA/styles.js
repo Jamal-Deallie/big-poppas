@@ -1,14 +1,11 @@
 import { styled } from '@mui/material/styles';
 import { Container, Typography, TextField, Button } from '@mui/material';
 
-export const CTASection = styled('div')`
-  font-family: Thunder;
-  font-size: 8rem;
-  width: 100%;
-  background: #1c1c1c;
-  color: #e9e7dc;
-  padding: 10.5rem 0;
-`;
+export const CTASection = styled('section')(({ theme }) => ({
+  width: '100%',
+  background: theme.palette.primary.main,
+  padding: '10rem 0',
+}));
 
 export const Heading = styled(Typography)`
   font-family: Thunder;
@@ -42,6 +39,7 @@ export const ContentContainer = styled(Container)({
   alignItems: 'center',
   flexDirection: 'column',
   width: '100%',
+  padding: '0 calc(.8rem + 1.5vw)',
 });
 
 export const EmailInput = styled(TextField)(({ theme }) => ({
@@ -76,8 +74,10 @@ export const EmailInput = styled(TextField)(({ theme }) => ({
   },
 }));
 
-export const Form = styled('form')({
-  margin: 1,
-  width: '15ch',
-  padding: '0 calc(.8rem + 1.5vw)',
-});
+export const Form = styled('form')(({ theme }) => ({
+  marginTop: '4.5rem',
+  width: '55rem',
+  [theme.breakpoints.down('md')]: {
+    width: '90%',
+  },
+}));
