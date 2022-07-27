@@ -8,18 +8,17 @@ import {
   NavOption,
   UserIcon,
 } from './styles.js';
-import { Cart, SearchBar, Search, MobileMenu } from '../../components';
+import { Cart, Search, MobileMenu } from '../../components';
 import { navItems } from '../../shared/navItems';
 import { Link, useNavigate } from 'react-router-dom';
 import { Box } from '@mui/material';
 import { selectToken } from '../../features/auth/authSlice';
+import { useSelector } from 'react-redux';
 
 export default function Navbar() {
   const navigate = useNavigate();
 
-  const token = localStorage.getItem('token');
-
-  const authState = false;
+  const token = useSelector(selectToken);
 
   return (
     <>
@@ -43,10 +42,10 @@ export default function Navbar() {
           </NavItems>
           <NavOptions>
             <Search />
-            <Link to='signin'>
+            <Link to={token ? 'account' : 'signin'}>
               <UserIcon
                 src='/images/icons/user-1.svg'
-                alt='cart icon'
+                alt='user icon'
                 sx={{ mt: 1 }}
               />
             </Link>

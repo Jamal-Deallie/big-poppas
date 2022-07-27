@@ -10,14 +10,10 @@ app.use(express.static('public'));
 const router = express.Router();
 
 const stripe = Stripe(process.env.STRIPE_TEST_API_KEY);
-console.log(Stripe(process.env.STRIPE_TEST_API_KEY));
 
 router.post('/create-checkout-session', async (req, res) => {
-  console.log('hit');
   const { line_items } = req.body;
-  console.log(line_items);
 
-  console.log({ stripe: stripe });
   let session;
   try {
     session = await stripe.checkout.sessions.create({
@@ -28,7 +24,6 @@ router.post('/create-checkout-session', async (req, res) => {
       cancel_url: `${process.env.WEB_APP_URL}`,
       shipping_address_collection: { allowed_countries: ['US'] },
     });
-    console.log(session);
     res.send({ url: session.url });
   } catch (err) {
     console.log(err);

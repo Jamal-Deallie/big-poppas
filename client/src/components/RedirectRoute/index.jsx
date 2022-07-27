@@ -2,13 +2,13 @@ import { useLocation, Navigate, Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectToken } from '../../features/auth/authSlice';
 
-export default function RequireAuth() {
+export default function RedirectRoute() {
   const token = useSelector(selectToken);
   const location = useLocation();
 
   return token ? (
-    <Outlet />
+    <Navigate to='/' state={{ from: location }} replace />
   ) : (
-    <Navigate to='/signin' state={{ from: location }} replace />
+    <Outlet />
   );
 }

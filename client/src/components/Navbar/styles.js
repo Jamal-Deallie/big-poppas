@@ -49,9 +49,8 @@ export const NavItems = styled(Box)({
 export const NavOptions = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center',
-  width: 'auto',
-  gap: '2.5rem',
+  justifyContent: 'space-around',
+  gap: '3.5rem',
   cursor: 'pointer',
   [theme.breakpoints.down('md')]: {
     gap: '1rem',
@@ -151,6 +150,7 @@ export const NavOption = styled(Typography, {
 
 export const UserIcon = styled('img')(({ theme }) => ({
   height: '3rem',
+  marginRight: '-1rem',
   [theme.breakpoints.down('md')]: {
     display: 'none',
   },

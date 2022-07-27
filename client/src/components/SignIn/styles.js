@@ -35,14 +35,7 @@ export const CustomButton = styled(Button)`
   }
 `;
 
-export const FormWrap = styled(Container)`
-  padding-top: 7.5rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2.5rem;
-`;
+
 
 export const FormContainer = styled(Box)({
   margin: '0 auto',
@@ -97,4 +90,27 @@ export const CustomLink = styled(Link)(({ theme }) => ({
   '&:hover': {
     color: theme.palette.secondary.main,
   },
+}));
+
+export const Form = styled('form')({});
+
+export const LinkContainer = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  gap: '1rem',
+  marginTop: '2.5rem',
+  textAlign: 'center',
+}));
+
+
+export const FormWrap = styled(Box)(({ theme }) => ({
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 550,
+  borderRadius: '30px',
+  padding: '7rem 3rem',
+  height: '100%',
+  gap: '5rem',
 }));

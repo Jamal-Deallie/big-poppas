@@ -10,7 +10,6 @@ export { default as CTAContainer } from './CTA';
 export { default as AboutContainer } from './About';
 export { default as InMemoriamContainer } from './InMemoriam';
 export { default as LoginContainer } from './Login';
-export { default as RegisterContainer } from './Register';
 export { default as ContactUsContainer } from './ContactUs';
 export { default as AccountContainer } from './Account';
 export { default as AccountDetailsContainer } from './AccountDetails';

@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { MainLayout } from './Layouts';
+import { RedirectRoute, RequireAuth } from './components';
 import {
   HomePage,
   ProductPage,
@@ -8,11 +9,11 @@ import {
   NotFoundPage,
   ContactPage,
   LocationPage,
-  RegisterPage,
-  LoginPage,
+  SignUpPage,
+  SignInPage,
   ForgotPasswordPage,
   FaqsPage,
-  DashboardPage,
+  AccountPage,
   ResetPasswordPage,
   SearchResultsPage,
   CheckoutSuccessPage,
@@ -32,17 +33,19 @@ function App() {
           <Route path='about' element={<AboutPage />} />
           <Route path='contact' element={<ContactPage />} />
           <Route path='faqs' element={<FaqsPage />} />
-          <Route path='register' element={<RegisterPage />} />
           <Route path='location' element={<LocationPage />} />
-          <Route path='signin' element={<LoginPage />} />
+          <Route element={<RedirectRoute />}>
+            <Route path='signup' element={<SignUpPage />} />
+            <Route path='signin' element={<SignInPage />} />
+          </Route>
           <Route path='forgotpassword' element={<ForgotPasswordPage />} />
           <Route path='resetpassword/:token' element={<ResetPasswordPage />} />
-          <Route path='dashboard' element={<DashboardPage />} />
-          {/* <Route index element={<GetQuery />}> */}
-          {/* </Route> */}
+          {/* <Route path='dashboard' element={<DashboardPage />} /> */}
           <Route path='checkout-success' element={<CheckoutSuccessPage />} />
-          {/* 404 route */}
           <Route path='*' element={<NotFoundPage />} />
+          <Route element={<RequireAuth />}>
+            <Route path='account' element={<AccountPage />} />
+          </Route>
         </Route>
       </Routes>
     </Router>

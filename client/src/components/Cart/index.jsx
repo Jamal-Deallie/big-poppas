@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
-import { CartWrapper, CartIcon } from './styles';
-import {
-  Badge,
-  Drawer,
-  List,
-  ListItem,
-  ListItemText,
-  Button,
-} from '@mui/material';
+import { CartIcon } from './styles';
+import { Badge, Drawer, Button } from '@mui/material';
 import { CartItems } from '../../components';
 import { useSelector } from 'react-redux';
 import { selectCartQuantity } from '../../features/cart/cartSlice.js';

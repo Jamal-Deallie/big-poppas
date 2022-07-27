@@ -25,7 +25,7 @@ const createSendToken = (user, statusCode, req, res) => {
 
   // Remove password from output
   user.password = undefined;
-
+  console.log({ status: 'success', token, user });
   res.status(statusCode).json({
     status: 'success',
     token,
@@ -197,6 +197,7 @@ exports.signin = catchAsync(async (req, res, next) => {
   }
   // 2) Check if user exists && password is correct
   const user = await User.findOne({ email }).select('+password');
+  console.log(user);
   const correctPassword = await user.correctPassword(password, user.password);
 
   //since the password is encrypted via bcrypt the correctPassword function can confirm the hashed PW matches the inputted PW

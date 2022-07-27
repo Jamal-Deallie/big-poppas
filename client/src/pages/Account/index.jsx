@@ -1,9 +1,5 @@
-import { MainLayout } from '../../Layouts';
 import { AccountContainer } from '../../containers';
+
 export default function AccountPage() {
-  return (
-    <>
-      <AccountContainer />
-    </>
-  );
+  return <AccountContainer />;
 }

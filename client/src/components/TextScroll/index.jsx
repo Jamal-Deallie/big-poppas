@@ -14,35 +14,24 @@ import useArrayRef from '../../hooks/useArrayRef';
 import { useEnhancedEffect } from '../../hooks/useEnhancedEffect';
 import { rotationAnimation } from '../../animations/rotate';
 import { Box } from '@mui/material';
+import { horizontalLoop } from '../../animations/horizontalLoop';
 
 export default function TextScroll({ children }) {
   const scrollWrapper = useRef(null);
   const [wrappers, setWrapper] = useArrayRef();
   const [smileyFace, setSmileyFace] = useArrayRef();
 
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    let animation;
-    ScrollTrigger.matchMedia({
-      // desktop
-      '(min-width: 850px)': function () {
-        animation = gsap.to([wrappers.current], {
-          x: (_, el) => -(el.scrollWidth - window.innerWidth),
-          scrollTrigger: {
-            trigger: scrollWrapper.current,
-            start: 'top top',
-            end: '400%',
-            pin: true,
-            scrub: true,
-            invalidateOnRefresh: true,
-          },
-        });
-      },
-    });
-    return () => {
-      animation.kill();
+  useEffect(() => {
+    const config = {
+      draggable: false,
+      center: false,
+      speed: 1,
+      reversed: false,
+      repeat: -1,
+      snap: false,
     };
-  }, [wrappers, scrollWrapper]);
+    horizontalLoop(wrappers.current, config);
+  }, [horizontalLoop]);
 
   useEffect(() => {
     rotationAnimation(smileyFace.current);
@@ -67,9 +56,41 @@ export default function TextScroll({ children }) {
             <SmileyContainer>
               <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
             </SmileyContainer>
+            I <Outline>LOVE </Outline>
+            It When You call me
+            <Outline> Big Poppa</Outline>
+            <SmileyContainer>
+              <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
+            </SmileyContainer>
+            I <Outline>LOVE </Outline>
+            It When You call me
+            <Outline> Big Poppa</Outline>
+            <SmileyContainer>
+              <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
+            </SmileyContainer>
           </TextWrapper>
           <ContentContainer>{children}</ContentContainer>
           <TextWrapper ref={setWrapper}>
+            <SmileyContainer>
+              <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
+            </SmileyContainer>
+            It's <Outline>All </Outline>Good Baby
+            <Outline> Baby</Outline>
+            <SmileyContainer>
+              <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
+            </SmileyContainer>
+            It's <Outline>All </Outline>Good Baby
+            <Outline> Baby</Outline>
+            <SmileyContainer>
+              <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
+            </SmileyContainer>
+            It's <Outline>All </Outline>Good Baby
+            <Outline> Baby</Outline>
+            <SmileyContainer>
+              <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
+            </SmileyContainer>
+            It's <Outline>All </Outline>Good Baby
+            <Outline> Baby</Outline>
             <SmileyContainer>
               <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
             </SmileyContainer>

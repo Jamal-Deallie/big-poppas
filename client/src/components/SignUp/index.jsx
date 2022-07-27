@@ -1,32 +1,33 @@
 import React, { useState, useCallback } from 'react';
 import {
   CustomButton,
-  LoginSection,
-  FormContainer,
+  RegisterSection,
+  FormWrap,
   CustomInput,
+  Link,
+  RegisterWrap,
   CustomLink,
-  LoginWrap,
+  FormContainer,
 } from './styles';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Grid, Button, InputAdornment, IconButton, Box } from '@mui/material';
 import { Heading } from '../../components';
-import { useSignInUserMutation } from '../../features/user/userSlice';
-import { setCredentials } from '../../features/auth/authSlice';
-import { useDispatch } from 'react-redux';
+import { useSignUpUserMutation } from '../../features/user/userSlice';
+import { setUser } from '../../features/auth/authSlice';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
-export default function Login() {
+export default function SignUp() {
   const navigate = useNavigate();
-  const location = useLocation();
-  const dispatch = useDispatch();
-  const from = location.state?.from?.pathname || '/';
+
   const [formData, setFormData] = useState({
+    name: '',
     password: '',
     email: '',
+    passwordConfirm: '',
   });
+  const { name, password, email, passwordConfirm } = formData;
   const [showPassword, setShowPassword] = useState(false);
-
   const handleClickShowPassword = () => {
     setShowPassword(showPassword => !showPassword);
   };
@@ -38,26 +39,22 @@ export default function Login() {
     [formData]
   );
 
-  const [signInUser, { isLoading, isSuccess, isError, data }] =
-    useSignInUserMutation();
+  const [signUpUser, { isLoading, isSuccess, isError, data }] =
+    useSignUpUserMutation();
 
-  if (isSuccess) {
-    dispatch(setCredentials({ token: data.token, name: data.user.firstName }));
-    navigate(from, { replace: true });
-  }
-
-  const { password, email } = formData;
-  const canSave = [email, password].every(Boolean) && !isLoading;
+  const canSave =
+    [name, email, password, passwordConfirm].every(Boolean) && !isLoading;
 
   const handleSubmit = async () => {
     if (canSave) {
       try {
-        await signInUser(formData).unwrap();
+        signUpUser(formData).unwrap();
         setFormData({
+          name: '',
           password: '',
           email: '',
+          passwordConfirm: '',
         });
-        navigate('/');
       } catch (err) {
         console.error(err);
       }
@@ -70,7 +67,7 @@ export default function Login() {
     console.error('An Error has occurred');
   }
   return (
-    <LoginSection>
+    <RegisterSection>
       <FormContainer>
         <Heading firstLine={'Register'} />
         <Box sx={{ mt: 7.5 }} component='form' onSubmit={handleSubmit}>
@@ -203,6 +200,6 @@ export default function Login() {
           </Grid>
         </Box>
       </FormContainer>
-    </LoginSection>
+    </RegisterSection>
   );
 }
