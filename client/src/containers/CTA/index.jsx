@@ -6,26 +6,11 @@ import {
   Form,
   EmailInput,
   Outline,
-  CustomButton,
 } from './styles';
 import { useState } from 'react';
-import { Typography, Box } from '@mui/material';
+import { Typography, Box, Button } from '@mui/material';
 import { useNewsLetterMutation } from '../../features/newsletter/newsLetterSlice';
 export default function CTAContainer() {
-  // const emailInputElement = useRef();
-
-  // const formHandler = useCallback(
-  //   () => event => {
-  //     event.preventDefault();
-
-  //     const data = {
-  //       email: emailInputElement.current?.value,
-  //     };
-
-  //   },
-  //   []
-  // );
-
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const [newsLetter, { isSuccess }] = useNewsLetterMutation();
@@ -77,9 +62,9 @@ export default function CTAContainer() {
             onChange={e => setEmail(e.target.value)}
             value={email}
           />
-          <CustomButton type='submit' fullWidth>
+          <Button type='submit' fullWidth variant='secondary'>
             Submit
-          </CustomButton>
+          </Button>
         </Form>
       </ContentContainer>
     </CTASection>

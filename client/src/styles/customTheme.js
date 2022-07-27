@@ -67,6 +67,27 @@ export const customTheme = createTheme({
             },
           },
         },
+        {
+          props: { variant: 'secondary' },
+          style: {
+            background: primaryColor,
+            color: secondaryColor,
+            fontSize: '1.6rem',
+            fontFamily: 'open-sans,sans-serif',
+            fontWeight: 400,
+            lineHeight: 1.2,
+            padding: '1.75rem 4rem',
+            border: `2px solid ${secondaryColor}`,
+            borderRadius: '8px',
+            boxSizing: 'border-box',
+            boxShadow:
+              '1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,5px 5px 0px 0px',
+            '&:hover': {
+              boxShadow: 'none',
+              background: primaryColor,
+            },
+          },
+        },
       ],
       defaultProps: {
         disableElevation: true,

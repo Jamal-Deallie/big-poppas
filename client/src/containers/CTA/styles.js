@@ -35,13 +35,14 @@ export const Subheader = styled(Typography)({
   lineHeight: 1.2,
 });
 
-export const ContentContainer = styled(Container)`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
+export const ContentContainer = styled(Container)({
+  position: 'relative',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: 'column',
+  width: '100%',
+});
 
 export const EmailInput = styled(TextField)(({ theme }) => ({
   verticalAlign: 'middle',
@@ -75,44 +76,8 @@ export const EmailInput = styled(TextField)(({ theme }) => ({
   },
 }));
 
-export const Form = styled('form')({ margin: 1, width: '15ch' });
-
-export const SVG = styled('svg')`
-  width: 30rem;
-`;
-
-export const Text = styled('text')`
-  font-family: Thunder;
-  font-size: 4.5rem;
-  margin-right: 10rem;
-`;
-
-export const StyledContainer = styled(Container)`
-  width: 45rem;
-  display: flex;
-  flex-direction: column;
-`;
-
-export const CustomButton = styled(Button)`
-  font-family: 'open Sans', sans-serif;
-  font-size: 16px;
-  letter-spacing: 2px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #e9e7dc;
-  cursor: pointer;
-  border: 3px solid;
-  padding: 1.2rem 1rem;
-  background: #1c1c1c;
-  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
-    5px 5px 0px 0px;
-  position: relative;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  &:hover {
-    box-shadow: 0px 0px 0px 0px;
-    top: 5px;
-    left: 5px;
-  }
-`;
+export const Form = styled('form')({
+  margin: 1,
+  width: '15ch',
+  padding: '0 calc(.8rem + 1.5vw)',
+});
