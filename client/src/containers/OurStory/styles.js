@@ -33,6 +33,7 @@ export const ImageWrapper = styled(Grid)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  overflow: 'hidden',
   [theme.breakpoints.down('md')]: {
     paddingTop: '5.5rem',
   },

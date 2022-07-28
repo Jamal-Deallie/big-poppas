@@ -5,7 +5,7 @@ import {
   ContentContainer,
   Pizza,
   PizzaContainer,
-  BangImg,
+  PizzaIcon,
   Container,
   HeadingContainer,
   HeadingWrap,
@@ -29,7 +29,7 @@ export default function NutritionContainer() {
   useEffect(() => {
     rotationAnimation(validation.current);
   }, [validation]);
-  
+
   return (
     <NutritionSection>
       <HeadingSection>
@@ -51,8 +51,8 @@ export default function NutritionContainer() {
             return (
               <Box key={id}>
                 <Container>
-                  <BangImg
-                    src='images/icons/pizza.svg'
+                  <PizzaIcon
+                    src='images/icons/pizza-pie.svg'
                     alt='validation'
                     ref={setValidation}
                   />
@@ -80,8 +80,8 @@ export default function NutritionContainer() {
             return (
               <Box key={id} sx={{ height: '100%' }}>
                 <Container>
-                  <BangImg
-                    src='images/icons/pizza.svg'
+                  <PizzaIcon
+                    src='images/icons/pizza-pie.svg'
                     alt='validation'
                     ref={setValidation}
                   />

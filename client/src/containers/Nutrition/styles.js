@@ -43,8 +43,8 @@ export const Nutrition = styled(Grid)(({ theme }) => ({
   },
 }));
 
-export const BangImg = styled('img')({
-  height: '4rem',
+export const PizzaIcon = styled('img')({
+  height: '5.5rem',
   margin: 0,
 });
 

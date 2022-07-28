@@ -15,6 +15,12 @@ export const CartSection = styled(Box)(({ theme }) => ({
   background: theme.palette.secondary.light,
   height: '100vh',
   width: '50rem',
+  [theme.breakpoints.down('md')]: {
+    width: '75%',
+  },
+  [theme.breakpoints.down('sm')]: {
+    width: '100%',
+  },
 }));
 
 export const CartFooter = styled(Box)(({ theme }) => ({

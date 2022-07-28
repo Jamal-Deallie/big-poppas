@@ -12,10 +12,10 @@ export const TextWrapper = styled(Box)(({ theme }) => ({
   color: theme.palette.secondary.main,
   fontFamily: 'Thunder, sans-serif',
   textTransform: 'uppercase',
-  width: '120%',
-  [theme.breakpoints.down('md')]: {
-    display: 'none',
-  },
+  width: '150%',
+  // [theme.breakpoints.down('md')]: {
+  //   display: 'none',
+  // },
 }));
 
 export const ContentContainer = styled(Box)({
