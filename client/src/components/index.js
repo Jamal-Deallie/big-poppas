@@ -1,6 +1,5 @@
 export { default as Navbar } from './Navbar';
 export { default as Cart } from './Cart';
-export { default as CartPreview } from './CartPreview';
 export { default as Carousel } from './Carousel';
 export { default as CustomCard } from './Card';
 export { default as DashboardForm } from './DashboardForm';

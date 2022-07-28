@@ -32,5 +32,9 @@ export default function ImageAnimation({ children, id }) {
     };
   }, []);
 
-  return <Box ref={ref}>{children}</Box>;
+  return (
+    <Box ref={ref} sx={{ margin: '0 auto' }}>
+      {children}
+    </Box>
+  );
 }

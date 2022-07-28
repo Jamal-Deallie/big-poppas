@@ -88,7 +88,7 @@ export default function SignIn() {
             )}
           </Box>
 
-          <Box sx={{ p: 2 }}>
+          <Box sx={{ p: 2, width: '100%' }}>
             <Stack
               spacing={4}
               component='form'
@@ -146,7 +146,7 @@ export default function SignIn() {
               <LinkContainer>
                 <CustomLink to='forgotpassword'>Forgot Password</CustomLink>
                 <Typography>|</Typography>
-                <CustomLink to='/signup'>Create An Account</CustomLink>
+                <CustomLink to='signup'>Create An Account</CustomLink>
               </LinkContainer>
             </Stack>
           </Box>

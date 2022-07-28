@@ -1,76 +1,169 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import {
-  CustomButton,
-  ForgotPasswordSection,
+  ResetPasswordSection,
   FormWrap,
   CustomInput,
-  Link,
+  CustomLink,
+  FormContainer,
 } from './styles';
-import { FormControl } from '@mui/material';
-import { Heading } from '../../components';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import {
-  useSignUpUserMutation,
-  useSignInUserMutation,
-} from '../../features/user/userSlice';
-import { useDispatch } from 'react-redux';
-import { useLocation } from 'react-router-dom';
-
-const initialState = {
-  password: '',
-  passwordConfirm: '',
-};
+  Grid,
+  Button,
+  InputAdornment,
+  IconButton,
+  Box,
+  Stack,
+  Typography,
+} from '@mui/material';
+import { useResetPasswordMutation } from '../../features/user/userSlice';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 export default function ResetPassword() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
+  const [formData, setFormData] = useState({
+    password: '',
+    passwordConfirm: '',
+  });
 
-  const [formData, setFormData] = useState(initialState);
-  const [signUpUser] = useSignUpUserMutation();
-  const dispatch = useDispatch();
- 
-  let location = useLocation();
-  let navigate = useNavigate();
-  const formType = location.pathname.substring(1).toLowerCase();
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState(false);
+
+  const handleClickShowPassword = () => {
+    setShowPassword(showPassword => !showPassword);
+  };
 
   const updateFormData = useCallback(
     type => event => {
       setFormData({ ...formData, [type]: event.target.value });
     },
-
     [formData]
   );
 
-  console.log(formData);
+  const [resetPassword, { isSuccess }] = useResetPasswordMutation();
 
+  const handleSubmit = async event => {
+    event.preventDefault();
+    try {
+      await resetPassword(formData).unwrap();
+    } catch (err) {
+      setError('Sign Up Failed');
+    }
+  };
 
+  useEffect(() => {
+    if (isSuccess) {
+      setFormData({
+        password: '',
+        passwordConfirm: '',
+      });
+      navigate(from, { replace: true });
+    }
+  }, [isSuccess, setFormData, navigate, from]);
 
   return (
-    <ForgotPasswordSection>
-      <Heading firstLine={'Reset'} secondLine={'Password'} />
-      <FormWrap>
-        <FormControl variant='standard'>
-          <CustomInput
-            id='outlined-basic'
-            variant='standard'
-            onChange={updateFormData('password')}
-            value={formData.password}
-            type='password'
-            label='Password'
-          />
-        </FormControl>
-        <FormControl variant='standard'>
-          <CustomInput
-            id='outlined-basic'
-            variant='standard'
-            onChange={updateFormData('passwordConfirm')}
-            value={formData.passwordConfirm}
-            type='passwordConfirm'
-            label='Password Confirm'
-          />
-        </FormControl>
+    <ResetPasswordSection>
+      <FormContainer>
+        <FormWrap>
+          <Box sx={{ textAlign: 'center' }}>
+            <Typography variant='header3'>
+              Reset <span>Password</span>
+            </Typography>
+          </Box>
+          <Box sx={{ textAlign: 'center', mt: 2.5 }}>
+            {error && (
+              <Typography
+                variant='body1'
+                sx={{ color: 'primary.main', textAlign: 'center' }}>
+                {error}
+              </Typography>
+            )}
+          </Box>
+          <Box sx={{ mt: 7.5 }}>
+            <Stack
+              spacing={4}
+              component='form'
+              onSubmit={handleSubmit}
+              noValidate>
+              <CustomInput
+                fullWidth
+                label='Password'
+                id='outlined-start-adornment'
+                type={showPassword ? 'text' : 'password'}
+                onChange={updateFormData('password')}
+                value={formData.password}
+                name='password'
+                autoComplete='new-password'
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position='start'>
+                      <IconButton
+                        onClick={handleClickShowPassword}
+                        aria-label='toggle password visibility'
+                        sx={{
+                          pointerEvents: 'click',
+                        }}>
+                        {showPassword ? (
+                          <VisibilityOff fontSize='large' />
+                        ) : (
+                          <Visibility fontSize='large' />
+                        )}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+              />
+              <CustomInput
+                fullWidth
+                label='Password'
+                id='outlined-start-adornment'
+                type={showPassword ? 'text' : 'password'}
+                onChange={updateFormData('passwordConfirm')}
+                value={formData.passwordConfirm}
+                name='passwordConfirm'
+                autoComplete='new-password'
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position='start'>
+                      <IconButton
+                        onClick={handleClickShowPassword}
+                        aria-label='toggle password visibility'
+                        sx={{
+                          pointerEvents: 'click',
+                        }}>
+                        {showPassword ? (
+                          <VisibilityOff fontSize='large' />
+                        ) : (
+                          <Visibility fontSize='large' />
+                        )}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+              />
 
-        <CustomButton onClick={null}>Submit</CustomButton>
-        <Link onClick={() => navigate('/')}>Cancel</Link>
-      </FormWrap>
-    </ForgotPasswordSection>
+              <Button variant='main' type='submit'>
+                Submit
+              </Button>
+
+              <Grid item xs={12} sx={{ textAlign: 'center', pt: 2.5 }}>
+                <CustomLink to='/' variant='body2'>
+                  Cancel
+                </CustomLink>
+              </Grid>
+            </Stack>
+          </Box>
+        </FormWrap>
+      </FormContainer>
+    </ResetPasswordSection>
   );
 }

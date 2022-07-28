@@ -9,9 +9,10 @@ export const StorySection = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   height: '100%',
   position: 'relative',
+  padding: '10rem 0',
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column',
-    padding: 'calc(.8rem + 1.5vw)',
+    padding: '5rem 0',
   },
 }));
 
@@ -24,27 +25,36 @@ export const HeadingContainer = styled(Container)(({ theme }) => ({
   },
 }));
 
-export const Image = styled('img')({
+export const Image = styled('img')(({ theme }) => ({
   maxHeight: '45rem',
   maskImage: 'linear-gradient(to top, transparent 1%, black 45%)',
-});
+  [theme.breakpoints.down('md')]: {
+    maxHeight: '35rem',
+  },
+}));
 
 export const ImageWrapper = styled(Grid)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   overflow: 'hidden',
+  width: '100%',
   [theme.breakpoints.down('md')]: {
-    paddingTop: '5.5rem',
+    paddingBottom: '2.5rem',
   },
 }));
 
-export const GridContainer = styled(Grid)({
+export const GridContainer = styled(Grid)(({ theme }) => ({
   margin: '0 auto',
-  padding: '1rem',
   maxWidth: '120rem',
   alignItems: 'center',
-});
+}));
+
+export const GridText = styled(Grid)(({ theme }) => ({
+  [theme.breakpoints.down('md')]: {
+    textAlign: 'center',
+  },
+}));
 
 export const StyledButton = styled(Button)`
   font-family: 'open Sans', sans-serif;

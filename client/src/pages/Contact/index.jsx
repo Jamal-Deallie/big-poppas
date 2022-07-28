@@ -1,11 +1,5 @@
-import { MainLayout } from '../../Layouts';
-import { ContactUsContainer, ContactDetailsContainer } from '../../containers';
+import { ContactForm } from '../../components';
 
 export default function ContactPage() {
-  return (
-    <>
-      <ContactUsContainer />
-      <ContactDetailsContainer/>
-    </>
-  );
+  return <ContactForm />;
 }

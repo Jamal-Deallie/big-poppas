@@ -1,47 +1,31 @@
 import { styled } from '@mui/material/styles';
-import { Container, Typography, TextField, Button } from '@mui/material';
+import { TextField, Box, Container } from '@mui/material';
+import { Link } from 'react-router-dom';
 
-export const RegisterSection = styled('div')(({ theme }) => ({
-  background: theme.palette.secondary.main,
-  padding: '12.5rem 0',
+export const RegisterSection = styled(Box)(({ theme }) => ({
+  background: theme.palette.warning.main,
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  position: 'relative',
+  padding: '6.5rem 0 12.5rem',
+  [theme.breakpoints.down('md')]: {
+    padding: '6.5rem 0 6.5rem',
+  },
 }));
 
-export const RegisterWrap = styled('form')({
-  width: '45rem',
+export const FormContainer = styled(Container)({
   margin: '0 auto',
+  position: 'relative',
+  height: '100%',
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: 'column',
+  minHeight: '55rem',
 });
-export const CustomButton = styled(Button)`
-  font-family: 'open Sans', sans-serif;
-  font-size: 16px;
-  letter-spacing: 2px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #1c1c1c;
-  cursor: pointer;
-  border: 3px solid;
-  padding: 1.2rem 1rem;
-  background: #e9e7dc;
-  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
-    5px 5px 0px 0px;
-  position: relative;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  &:hover {
-    box-shadow: 0px 0px 0px 0px;
-    top: 5px;
-    left: 5px;
-  }
-`;
-
-export const FormWrap = styled(Container)`
-  padding-top: 7.5rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2.5rem;
-`;
 
 export const CustomInput = styled(TextField)({
   '& label.Mui-focused': {
@@ -50,7 +34,7 @@ export const CustomInput = styled(TextField)({
   '& label': {
     color: ' #1c1c1c',
     fontFamily: 'open-sans, sans-serif',
-    fontSize: 18,
+    fontSize: '1.6rem',
     margin: 'dense',
   },
   '&& .MuiInput-underline:hover:before': {
@@ -58,6 +42,9 @@ export const CustomInput = styled(TextField)({
   },
   '& .MuiInput-underline': {
     marginTop: 25,
+  },
+  '& .MuiInput-input': {
+    fontSize: 18,
   },
   '& .MuiInput-underline:after': {
     borderBottomColor: '#1c1c1c',
@@ -70,11 +57,40 @@ export const CustomInput = styled(TextField)({
   },
 });
 
-export const Link = styled('p')`
-  cursor: pointer;
-  font-size: 1.2rem;
+export const CustomLink = styled(Link)(({ theme }) => ({
+  color: theme.palette.primary.main,
+  cursor: 'pointer',
+  fontSize: '1.6rem',
+  transition: 'color 0.2s ease-in-out',
+  fontWeight: 400,
+  '&:hover': {
+    color: theme.palette.secondary.main,
+    fontWeight: 400,
+  },
+}));
 
-  &:hover {
-    color: #e;
-  }
-`;
+export const LinkContainer = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  gap: '1rem',
+  marginTop: '2.5rem',
+  textAlign: 'center',
+}));
+
+export const FormWrap = styled(Box)(({ theme }) => ({
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '100%',
+  height: '100%',
+  gap: '5rem',
+  maxWidth: '55rem',
+  padding: 'calc(.8rem + 1.5vw)',
+}));
+
+export const InnerContainer = styled(Box)(({ theme }) => ({
+  width: '100%',
+  height: '100%',
+  paddingTop: '2.5rem',
+}));

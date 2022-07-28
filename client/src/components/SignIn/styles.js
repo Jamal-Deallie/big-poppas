@@ -4,14 +4,16 @@ import { Link } from 'react-router-dom';
 
 export const LoginSection = styled('div')(({ theme }) => ({
   background: theme.palette.warning.main,
-  padding: '12.5rem 0',
+  padding: '10.5rem 0',
+  width: '100%',
 }));
 
 export const FormContainer = styled(Container)({
   margin: '0 auto',
   padding: 'calc(.8rem + 1.5vw)',
   position: 'relative',
-  height: '60rem',
+  height: '45rem',
+  width: '100%',
 });
 
 export const CustomInput = styled(TextField)({
@@ -69,9 +71,9 @@ export const FormWrap = styled(Box)(({ theme }) => ({
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 550,
+  width: '100%',
   borderRadius: '30px',
-  padding: '7rem 3rem',
+  maxWidth: '55rem',
   height: '100%',
   gap: '5rem',
 }));

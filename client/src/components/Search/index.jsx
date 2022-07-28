@@ -39,7 +39,7 @@ export default function Search() {
   }
   return (
     <>
-      <Box onClick={cart} sx={{mt:1}}>
+      <Box onClick={cart} sx={{ mt: 1 }}>
         <SearchIcon src='/images/icons/search-2.svg' alt='search' />
       </Box>
 
@@ -53,11 +53,8 @@ export default function Search() {
               <Heading>Who Searched Ya</Heading>
               <Form onSubmit={handleSubmit} type='POST'>
                 <SearchBar>
-                  <SearchIconWrapper>
-                    <SearchIcon
-                      color='primary.main'
-                      sx={{ fontSize: 25, color: 'secondary.main' }}
-                    />
+                  <SearchIconWrapper sx={{ paddingBottom: '1.5rem' }}>
+                    <SearchIcon src='/images/icons/search-2.svg' alt='search' />
                   </SearchIconWrapper>
                   <StyledInputBase
                     placeholder='Search Our Pizzas'

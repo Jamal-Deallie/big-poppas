@@ -32,7 +32,7 @@ export const Links = styled(Link, {
   shouldForwardProp: prop => prop !== '$dn',
 })(({ theme, $dn }) => ({
   color: theme.palette.primary.main,
-  fontSize: '8.75rem',
+  fontSize: '7.75rem',
   fontWeight: 400,
   textTransform: 'uppercase',
   cursor: 'pointer',
@@ -42,7 +42,6 @@ export const Links = styled(Link, {
   overflow: 'hidden',
   lineHeight: 1.2,
   letterSpacing: '.2rem',
-  padding: 'calc(8px + 1.5625vw)',
   WebkitTextStroke: `0.15rem ${theme.palette.primary.main}`,
   WebkitTextFillColor: theme.palette.warning.main,
   '&:hover': {
@@ -76,13 +75,14 @@ export const LinkContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  flexWrap: 'wrap',
   gap: '1rem',
   flexDirection: 'column',
   maxWidth: '140rem',
   height: 'auto',
   overflow: 'hidden',
-  [theme.breakpoints.down('lg')]: {},
+  [theme.breakpoints.down('md')]: {
+    gap: '1rem',
+  },
 }));
 
 export const LinkWrap = styled(Box)({

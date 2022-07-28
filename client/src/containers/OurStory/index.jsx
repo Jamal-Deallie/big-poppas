@@ -6,9 +6,9 @@ import {
   Image,
   ImageWrapper,
   GridContainer,
-  StyledButton,
+  GridText,
 } from './styles';
-import { Grid, Typography, Box } from '@mui/material';
+import { Grid, Typography, Box, Button } from '@mui/material';
 import { TextScroll } from '../../components';
 import TextAnimation from '../../animations/text';
 import ImageAnimation from '../../animations/image';
@@ -18,13 +18,22 @@ export default function OurStoryContainer() {
     <TextScroll>
       <StorySection>
         <HeadingContainer>
-          {/* <Heading>
+          <Heading>
             I <Outline>LOVE</Outline> It When You call me
             <Outline> Big Poppa</Outline>
-          </Heading> */}
+          </Heading>
         </HeadingContainer>
-        <GridContainer container sx={{ width: '100%' }}>
-          <Grid item md={6}>
+        <GridContainer container>
+          <ImageWrapper item md={6}>
+            <ImageAnimation id='story' sx={{ padding: 'calc(.8rem + 1.5vw)' }}>
+              <Image
+                id='story-image'
+                src='https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1658723444/big_poppas/story-pizza.webp'
+                alt='woman holding a pizza'
+              />
+            </ImageAnimation>
+          </ImageWrapper>
+          <GridText item md={6} sx={{ padding: 'calc(.8rem + 1.5vw)' }}>
             <TextAnimation id='story'>
               <Typography variant='body3' id='story-text'>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -37,18 +46,11 @@ export default function OurStoryContainer() {
             </TextAnimation>
 
             <Box>
-              <StyledButton sx={{ mt: '5.5rem' }}>Learn More</StyledButton>
+              <Button variant='secondary' sx={{ mt: '5.5rem' }}>
+                Learn More
+              </Button>
             </Box>
-          </Grid>
-          <ImageWrapper item md={6}>
-            <ImageAnimation id='story'>
-              <Image
-                id='story-image'
-                src='https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1658723444/big_poppas/story-pizza.webp'
-                alt='woman holding a pizza'
-              />
-            </ImageAnimation>
-          </ImageWrapper>
+          </GridText>
         </GridContainer>
       </StorySection>
     </TextScroll>

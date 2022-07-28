@@ -51,13 +51,17 @@ export const FormWrap = styled(Box)(({ theme }) => ({
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: '55rem',
-  padding: 'calc(.8rem + 1.5vw)',
+  width: '100%',
+  borderRadius: '30px',
+  maxWidth: '55rem',
   height: '100%',
+  gap: '5rem',
+  padding: 'calc(.8rem + 1.5vw)',
 }));
 
 export const FormContainer = styled(Container)({
   margin: '0 auto',
   position: 'relative',
   height: '80rem',
+  width: '100%',
 });

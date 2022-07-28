@@ -29,7 +29,7 @@ import {
 } from '../../features/cart/cartSlice.js';
 import { CheckoutButton } from '../../components';
 
-export default function CartItems({ cart, quantity }) {
+export default function CartItems({ handleClick, quantity }) {
   const items = useSelector(selectCartItems);
   const subtotal = useSelector(selectCartSubtotal);
   const dispatch = useDispatch();
@@ -62,8 +62,8 @@ export default function CartItems({ cart, quantity }) {
           <Heading>
             Cart<span>{quantity > 0 ? `: (${quantity})` : ''}</span>
           </Heading>
-          <IconButton aria-label='close' size='large' onClick={cart}>
-            <Close variant='h1' sx={{ color: 'secondary.main' }} />
+          <IconButton aria-label='close' size='large' onClick={handleClick}>
+            <Close variant='h1' sx={{ color: 'primary.main' }} />
           </IconButton>
         </SubheaderContainer>
         <CustomDivider />
@@ -79,7 +79,7 @@ export default function CartItems({ cart, quantity }) {
         <CustomList>
           {items?.map(item => {
             return (
-              <CustomListItem key={item._id} disablePadding sx={{}}>
+              <CustomListItem key={item._id} disablePadding>
                 <ProductImage src={item.image} alt={item.name} />
                 <DetailsSection>
                   <ItemHeader>

@@ -5,7 +5,6 @@ import {
   NavOptions,
   NavLinks,
   NavItems,
-  NavOption,
   UserIcon,
 } from './styles.js';
 import { Cart, Search, MobileMenu } from '../../components';

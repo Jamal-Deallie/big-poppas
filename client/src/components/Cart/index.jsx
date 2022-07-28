@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CartIcon } from './styles';
-import { Badge, Drawer, Button } from '@mui/material';
+import { Badge, Drawer, Box } from '@mui/material';
 import { CartItems } from '../../components';
 import { useSelector } from 'react-redux';
 import { selectCartQuantity } from '../../features/cart/cartSlice.js';
@@ -15,13 +15,17 @@ export default function Cart() {
 
   return (
     <>
-      <Button onClick={handleClick}>
+      <Box onClick={handleClick} sx={{ ml: '1rem' }}>
         <Badge badgeContent={itemQuantity} color='warning'>
           <CartIcon src='/images/icons/basket-1.svg' alt='cart icon' />
         </Badge>
-      </Button>
+      </Box>
       <Drawer anchor='right' open={open} onClose={handleClick}>
-        <CartItems handleClick={handleClick} open={open} />
+        <CartItems
+          handleClick={handleClick}
+          open={open}
+          quantity={itemQuantity}
+        />
       </Drawer>
     </>
   );

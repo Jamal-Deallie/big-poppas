@@ -50,7 +50,7 @@ export default function CTAContainer() {
             </Typography>
           </Box>
         )}
-        <Typography color='secondary'>
+        <Typography color='secondary' sx={{ textAlign: 'center' }}>
           Sign up to stay up to date with the latest announcements.
         </Typography>
         <Form onSubmit={handleSubmit} method='POST'>

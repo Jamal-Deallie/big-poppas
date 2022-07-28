@@ -1,26 +1,25 @@
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import {
-  CustomButton,
   RegisterSection,
-  FormWrap,
   CustomInput,
-  Link,
-  RegisterWrap,
+  CustomLink,
+  LinkContainer,
+  FormWrap,
+  FormContainer,
+  InnerContainer,
 } from './styles';
-import { useNavigate } from 'react-router-dom';
-import { FormControl, Typography } from '@mui/material';
-import { Heading } from '../../components';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { Typography, Box, Stack, Button } from '@mui/material';
 import { useForgotPasswordMutation } from '../../features/user/userSlice';
-import { setUser } from '../../features/auth/authSlice';
 
-const initialState = {
-  email: '',
-};
 export default function ForgotPassword() {
   const navigate = useNavigate();
-
-  const [formData, setFormData] = useState(initialState);
-  const { email } = formData;
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
+  const [error, setError] = useState(false);
+  const [formData, setFormData] = useState({
+    email: '',
+  });
 
   const updateFormData = useCallback(
     type => event => {
@@ -32,50 +31,78 @@ export default function ForgotPassword() {
   const [forgotPassword, { isLoading, isSuccess, isError, data }] =
     useForgotPasswordMutation();
 
-  const canSave = [email].every(Boolean) && !isLoading;
-
-  const handleSubmit = async () => {
-    if (canSave) {
-      try {
-        forgotPassword(formData).unwrap();
-        setFormData({
-          email: '',
-        });
-      } catch (err) {
-        console.error(err);
-      }
+  const handleSubmit = async event => {
+    event.preventDefault();
+    try {
+      await forgotPassword(formData).unwrap();
+    } catch (err) {
+      setError('Forgot Password Failed');
     }
   };
 
-  if (isSuccess) {
-    console.log(data);
-  } else if (isError) {
-    console.error('An Error has occurred');
-  }
+  useEffect(() => {
+    if (isSuccess) {
+      setFormData({
+        email: '',
+      });
+      navigate(from, { replace: true });
+    }
+  }, [isSuccess, setFormData, navigate, from]);
+
   return (
     <RegisterSection>
-      <Heading firstLine={'Forgot'} secondLine={'Password ?'} />
-      <Typography>
-        Please enter your email address below. You will receive a link to reset
-        your password.
-      </Typography>
-      <RegisterWrap onSubmit={handleSubmit}>
+      <FormContainer>
         <FormWrap>
-          <FormControl variant='standard'>
-            <CustomInput
-              id='outlined-basic'
-              variant='standard'
-              label='Email'
-              onChange={updateFormData('email')}
-              value={formData.email}
-              type='email'
-            />
-          </FormControl>
+          <Box sx={{ textAlign: 'center' }}>
+            <Typography variant='header3'>
+              Forgot <span>Password</span>
+            </Typography>
+          </Box>
+          <Box sx={{ textAlign: 'center', mt: 2.5 }}>
+            {error && (
+              <Typography
+                variant='body1'
+                sx={{ color: 'primary.main', textAlign: 'center' }}>
+                {error}
+              </Typography>
+            )}
+          </Box>
+          <Typography sx={{ textAlign: 'center' }}>
+            Please enter your email address below. You will receive a link to
+            reset your password.
+          </Typography>
+          <InnerContainer>
+            <Stack
+              spacing={4}
+              component='form'
+              onSubmit={handleSubmit}
+              noValidate>
+              <CustomInput
+                margin='normal'
+                fullWidth
+                id='user'
+                label='Email Address'
+                onChange={updateFormData('email')}
+                value={formData.email}
+                autoFocus
+                inputProps={{
+                  autoComplete: 'off',
+                }}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+              />
 
-          <CustomButton type='submit'>Submit</CustomButton>
-          <Link onClick={() => navigate('/')}>Return to Store</Link>
+              <Button variant='main' type='submit'>
+                Submit
+              </Button>
+              <LinkContainer>
+                <CustomLink to='Return to Store'>Cancel</CustomLink>
+              </LinkContainer>
+            </Stack>
+          </InnerContainer>
         </FormWrap>
-      </RegisterWrap>
+      </FormContainer>
     </RegisterSection>
   );
 }

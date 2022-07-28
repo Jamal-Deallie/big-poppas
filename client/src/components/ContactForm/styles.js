@@ -1,89 +1,92 @@
-import { styled } from '@mui/system';
-import { Button, Box, TextField, Typography, Grid } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { TextField, Box, Container } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-export const CustomInput = styled(TextField)(({ theme }) => ({
-  '& .MuiOutlinedInput-root': {
-    '& > fieldset': {
-      border: `1px solid ${theme.palette.primary.main}`,
-      background: 'none',
-    },
+export const ContactFormSection = styled(Box)(({ theme }) => ({
+  background: theme.palette.warning.main,
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  position: 'relative',
+  padding: '10.5rem 0 10.5rem',
+  [theme.breakpoints.down('md')]: {
+    padding: '6.5rem 0 6.5rem',
   },
-  '&& .MuiOutlinedInput-root:hover': {
-    '& > fieldset': { border: `1px solid ${theme.palette.primary.main}` },
+}));
+
+export const FormContainer = styled(Container)({
+  margin: '0 auto',
+  position: 'relative',
+  height: '100%',
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: 'column',
+  minHeight: '55rem',
+});
+
+export const CustomInput = styled(TextField)({
+  '& label.Mui-focused': {
+    color: ' #e9e7dc',
   },
   '& label': {
-    color: theme.palette.primary.main,
-    fontFamily: 'muli, sans-serif',
+    color: ' #1c1c1c',
+    fontFamily: 'open-sans, sans-serif',
     fontSize: '1.6rem',
     margin: 'dense',
   },
-
-  '& .MuiTypography-root': {
-    color: theme.palette.primary.main,
+  '&& .MuiInput-underline:hover:before': {
+    borderBottomColor: '#e9e7dc',
   },
-
-  '& .MuiInputBase-root': {
-    color: theme.palette.primary.main,
+  '& .MuiInput-underline': {
+    marginTop: 25,
   },
-
-}));
-
-export const Text = styled(Typography)(({ theme }) => ({
-  color: theme.palette.primary.main,
-  cursor: 'pointer',
-}));
-
-export const ContactFormWrap = styled(Grid)(({ theme }) => ({
-  background: theme.palette.secondary.light,
-  padding: '7.5rem 1rem',
-}));
-
-export const CustomButton = styled(Button)(({ theme }) => ({
-  marginTop: '2.5rem',
-  background: theme.palette.secondary.main,
-  color: theme.palette.primary.main,
-  fontSize: 16,
-  fontFamily: 'open-sans, sans-serif',
-  fontWeight: 300,
-  padding: '1rem 4rem',
-  boxSizing: 'border-box',
-  border: '3px solid',
-  padding: '1.2rem 1rem',
-  boxShadow:
-    '1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,5px 5px 0px 0px',
-  boxSizing: 'border-box',
-  width: '100%',
-  transition: 'all 0.4s ease',
-  '&:hover': {
-    boxShadow: 'none',
-    top: '.5rem',
-    left: '.5rem',
+  '& .MuiInput-input': {
+    fontSize: 18,
   },
-}));
-
-export const Form = styled(Box)({
-  mt: 3,
-  maxWidth: '80rem',
-  margin: '0 auto',
-  padding: 'calc(.8rem - 1.5vw)',
+  '& .MuiInput-underline:after': {
+    borderBottomColor: '#1c1c1c',
+  },
+  '& .MuiInput-underline:before': {
+    borderBottomColor: ' #1c1c1c',
+  },
+  '& .MuiInput-underline:focused': {
+    borderBottomColor: ' #e9e7dc',
+  },
 });
 
-export const CustomLink = styled(Link, {
-  shouldForwardProp: prop => prop !== '$dn',
-})(({ theme, $dn }) => ({
+export const CustomLink = styled(Link)(({ theme }) => ({
   color: theme.palette.primary.main,
-  fontSize: '1.6rem',
-  fontWeight: 400,
   cursor: 'pointer',
-  fontFamily: 'open Sans, sans-serif',
-  textTransform: 'capitalize',
-  transition: 'all opacity color .2s ease',
-  position: 'relative',
-  display: 'inline-block',
-  padding: '3px 0',
+  fontSize: '1.6rem',
+  transition: 'color 0.2s ease-in-out',
+  fontWeight: 400,
   '&:hover': {
-    color: theme.palette.secondary.light,
+    color: theme.palette.secondary.main,
+    fontWeight: 400,
   },
 }));
 
+export const LinkContainer = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  gap: '1rem',
+  marginTop: '2.5rem',
+  textAlign: 'center',
+}));
+
+export const FormWrap = styled(Box)(({ theme }) => ({
+  width: '100%',
+  height: '100%',
+  gap: '5rem',
+  maxWidth: '55rem',
+  padding: 'calc(.4rem + .25vw)',
+}));
+
+export const InnerContainer = styled(Box)(({ theme }) => ({
+  width: '100%',
+  height: '100%',
+  paddingTop: '2.5rem',
+}));

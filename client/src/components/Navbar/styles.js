@@ -49,7 +49,7 @@ export const NavItems = styled(Box)({
 export const NavOptions = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-around',
+  justifyContent: 'space-between',
   gap: '3.5rem',
   cursor: 'pointer',
   [theme.breakpoints.down('md')]: {
