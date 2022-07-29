@@ -1,4 +1,4 @@
-import { NotFoundSection, InnerContainer, Text, Image } from './styles';
+import { NotFoundSection, InnerContainer, Text} from './styles';
 
 export default function NotFoundContainer() {
   return (

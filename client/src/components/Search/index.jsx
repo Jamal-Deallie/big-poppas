@@ -11,7 +11,6 @@ import {
   CloseSearchBtn,
   SubmitBtn,
   SearchIcon,
-  NavOption,
 } from './styles';
 import { Drawer, Box } from '@mui/material';
 

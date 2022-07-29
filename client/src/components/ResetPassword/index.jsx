@@ -50,7 +50,7 @@ export default function ResetPassword() {
     try {
       await resetPassword(formData).unwrap();
     } catch (err) {
-      setError('Sign Up Failed');
+      setError('Reset Password Failed');
     }
   };
 

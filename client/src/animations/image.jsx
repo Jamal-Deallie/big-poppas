@@ -22,7 +22,7 @@ export default function ImageAnimation({ children, id }) {
         duration: 0.5,
         scrollTrigger: {
           trigger: ref.current,
-          markers: true,
+
           start: 'top center',
         },
       }

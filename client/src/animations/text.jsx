@@ -36,7 +36,6 @@ export default function TextAnimation({ children, id }) {
 
     let st = ScrollTrigger.create({
       trigger: ref.current,
-      markers: true,
       start: 'top center',
       end: 'bottom',
       animation: flexAnimation,

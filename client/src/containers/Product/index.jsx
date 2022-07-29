@@ -1,13 +1,12 @@
 import { useMemo } from 'react';
 import {
   Heading,
-  ContentContainer,
   HeadingContainer,
   ProductSection,
   Outline,
+  ItemContainer,
 } from './styles';
 import { useLocation } from 'react-router-dom';
-import { Container } from '@mui/material';
 import {
   ProductListContainer,
   SearchListContainer,
@@ -39,20 +38,18 @@ export default function ProductContainer() {
 
   return (
     <ProductSection>
-      <ContentContainer>
-        <HeadingContainer>
-          {subheader === 'search' ? (
-            <Heading>
-              <Outline>Search</Outline> Results
-            </Heading>
-          ) : (
-            <Heading>
-              <Outline> Ready</Outline> to Pie ?
-            </Heading>
-          )}
-        </HeadingContainer>
-        <Container>{Products()}</Container>
-      </ContentContainer>
+      <HeadingContainer>
+        {subheader === 'search' ? (
+          <Heading>
+            <Outline>Search</Outline> Results
+          </Heading>
+        ) : (
+          <Heading>
+            <Outline> Ready</Outline> to Pie ?
+          </Heading>
+        )}
+      </HeadingContainer>
+      <ItemContainer>{Products()}</ItemContainer>
     </ProductSection>
   );
 }

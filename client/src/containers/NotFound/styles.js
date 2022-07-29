@@ -27,8 +27,3 @@ export const Text = styled('span')(({ theme }) => ({
   fontFamily: 'Thunder, sans-serif',
   fontSize: 'clamp(11.88rem, calc(9.37rem + 12.55vw), 18.31rem)',
 }));
-
-export const Image = styled('img')(({ theme }) => ({
-  width: 'auto',
-  height: '30rem',
-}));

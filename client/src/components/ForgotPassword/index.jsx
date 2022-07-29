@@ -28,8 +28,7 @@ export default function ForgotPassword() {
     [formData]
   );
 
-  const [forgotPassword, { isLoading, isSuccess, isError, data }] =
-    useForgotPasswordMutation();
+  const [forgotPassword, { isSuccess }] = useForgotPasswordMutation();
 
   const handleSubmit = async event => {
     event.preventDefault();

@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { InputBase, Typography } from '@mui/material';
+import { InputBase } from '@mui/material';
 
 export const SearchSection = styled('div')(({ theme }) => ({
   width: '100%',
@@ -88,49 +88,4 @@ export const CloseSearchBtn = styled('button')(({ theme }) => ({
 
 export const SubmitBtn = styled('button')(({ theme }) => ({
   display: 'none',
-}));
-
-export const NavOption = styled(Typography, {
-  shouldForwardProp: prop => prop !== '$dn',
-})(({ theme, $dn }) => ({
-  color: theme.palette.secondary.light,
-  fontSize: '1.6rem',
-  fontWeight: 400,
-  cursor: 'pointer',
-  fontFamily: 'open Sans, sans-serif',
-  textTransform: 'capitalize',
-  transition: 'all opacity color .2s ease',
-  position: 'relative',
-  display: 'inline-block',
-  padding: '3px 0',
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    top: 'calc(100% + 5px)',
-    width: 0,
-    right: 0,
-    height: '3px',
-    transition: 'width .4s cubic-bezier(0.51, 0.18, 0, 0.88) .1s',
-    background: theme.palette.warning.main,
-  },
-  '&::after': {
-    content: '""',
-    position: 'absolute',
-    top: 'calc(100% + 5px)',
-    width: 0,
-    right: 0,
-    height: '3px',
-    transition: 'width .2s cubic-bezier(0.29, 0.18, 0.26, 0.83)',
-    background: theme.palette.secondary.main,
-  },
-  '&:hover': {
-    '&::after': { width: '100%', left: 0 },
-    '&::before': { width: '100%', left: 0 },
-  },
-  '&.active': {
-    color: theme.palette.warning.main,
-  },
-  [theme.breakpoints.down('md')]: {
-    display: 'none',
-  },
 }));

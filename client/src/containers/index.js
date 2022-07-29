@@ -9,7 +9,6 @@ export { default as ContactDetailsContainer } from './ContactDetails';
 export { default as CTAContainer } from './CTA';
 export { default as AboutContainer } from './About';
 export { default as InMemoriamContainer } from './InMemoriam';
-export { default as ContactUsContainer } from './ContactUs';
 export { default as AccountContainer } from './Account';
 export { default as AccountDetailsContainer } from './AccountDetails';
 export { default as LocationContainer } from './Location';

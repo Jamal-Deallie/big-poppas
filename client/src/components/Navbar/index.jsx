@@ -9,14 +9,12 @@ import {
 } from './styles.js';
 import { Cart, Search, MobileMenu } from '../../components';
 import { navItems } from '../../shared/navItems';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Box } from '@mui/material';
 import { selectToken } from '../../features/auth/authSlice';
 import { useSelector } from 'react-redux';
 
 export default function Navbar() {
-  const navigate = useNavigate();
-
   const token = useSelector(selectToken);
 
   return (

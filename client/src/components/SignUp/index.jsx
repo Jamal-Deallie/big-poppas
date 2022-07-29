@@ -58,12 +58,12 @@ export default function SignUp() {
 
   useEffect(() => {
     if (isSuccess) {
-      // setFormData({
-      //   name: '',
-      //   password: '',
-      //   email: '',
-      //   passwordConfirm: '',
-      // });
+      setFormData({
+        name: '',
+        password: '',
+        email: '',
+        passwordConfirm: '',
+      });
       navigate(from, { replace: true });
     }
   }, [isSuccess, setFormData, navigate, from]);

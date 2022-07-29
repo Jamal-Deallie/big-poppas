@@ -13,18 +13,12 @@ export const ContentContainer = styled('div')`
   position: relative;
 `;
 
-export const HeadingContainer = styled(Container)`
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 0;
-`;
 export const Image = styled('img')`
   width: 90%;
   padding: 5% 0;
   display: block;
   margin: 0 auto;
 `;
-
 
 export const Text = styled(Typography)`
   font-size: 1.4rem;
@@ -33,3 +27,8 @@ export const Text = styled(Typography)`
   color: #e9e7dc;
 `;
 
+export const HeadingContainer = styled(Container)({
+  padding: 'calc(.8rem + 1.5625vw)',
+  display: 'flex',
+  justifyContent: 'space-between',
+});
