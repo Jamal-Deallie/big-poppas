@@ -1,4 +1,3 @@
-import { useEffect, useRef } from 'react';
 import {
   NutritionSection,
   Nutrition,
@@ -7,92 +6,91 @@ import {
   PizzaContainer,
   PizzaIcon,
   Container,
-  HeadingContainer,
-  HeadingWrap,
-  Heading,
-  HeadingSection,
 } from './styles';
-import { yoyoAnimation } from '../../animations/yoyo';
-import { rotationAnimation } from '../../animations/rotate';
+import FadeIn from '../../animations/FadeIn';
 import { Box, Typography } from '@mui/material';
 import { nutritionItems as items } from '../../shared/nutritionItems';
-import useArrayRef from '../../hooks/useArrayRef';
+import { TextDouble } from '../../components';
 
 export default function NutritionContainer() {
-  const imageRef = useRef(null);
-  const [validation, setValidation] = useArrayRef();
-
-  useEffect(() => {
-    yoyoAnimation(imageRef.current);
-  }, []);
-
-  useEffect(() => {
-    rotationAnimation(validation.current);
-  }, [validation]);
+  const textData = [
+    {
+      id: 1,
+      text: 'Natural',
+      clrSub: 'secondary.main',
+      clrTrail: 'primary.light',
+    },
+    {
+      id: 2,
+      text: 'Ingredients',
+      clrSub: 'primary.main',
+      clrTrail: 'primary.light',
+    },
+  ];
 
   return (
     <NutritionSection>
-      <HeadingSection>
-        <HeadingContainer>
-          <HeadingWrap>
-            <Heading>Made with</Heading>
-          </HeadingWrap>
-
-          <HeadingWrap>
-            <Heading>real ingredients</Heading>
-          </HeadingWrap>
-        </HeadingContainer>
-      </HeadingSection>
-
+      <TextDouble textLines={textData} variant='subheader4' />
       <ContentContainer container>
         <Nutrition item md={3}>
           {items.slice(0, 2).map(item => {
-            const { id, desc } = item;
+            const { id, desc, src, heading } = item;
             return (
-              <Box key={id}>
-                <Container>
-                  <PizzaIcon
-                    src='images/icons/pizza-pie.svg'
-                    alt='validation'
-                    ref={setValidation}
-                  />
-                </Container>
+              <FadeIn>
+                <Box key={id} sx={{ height: '100%' }}>
+                  <Container>
+                    <PizzaIcon src={src} alt={desc} />
+                  </Container>
 
-                <Box>
-                  <Typography variant='body1' sx={{ textAlign: 'center' }}>
-                    {desc}
-                  </Typography>
+                  <Box key={id}>
+                    <Typography
+                      variant='body2'
+                      sx={{ textAlign: 'center', color: 'primary.main' }}>
+                      {heading}
+                    </Typography>
+                    <Typography
+                      variant='body1'
+                      sx={{ textAlign: 'center', color: 'primary.main' }}>
+                      {desc}
+                    </Typography>
+                  </Box>
                 </Box>
-              </Box>
+              </FadeIn>
             );
           })}
         </Nutrition>
         <PizzaContainer item md={6}>
-          <Pizza
-            src='https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1658723447/big_poppas/nutrition-pizza.webp'
-            alt='pizza slice'
-            ref={imageRef}
-          />
+          <FadeIn>
+            <Pizza
+              src='https://res.cloudinary.com/dtwk4dm3g/image/upload/q_100/v1658723447/big_poppas/nutrition-pizza.webp'
+              alt='pizza slice'
+            />
+          </FadeIn>
         </PizzaContainer>
         <Nutrition item md={3}>
           {items.slice(2, 4).map(item => {
-            const { id, desc } = item;
+            const { id, desc, src, heading } = item;
             return (
-              <Box key={id} sx={{ height: '100%' }}>
-                <Container>
-                  <PizzaIcon
-                    src='images/icons/pizza-pie.svg'
-                    alt='validation'
-                    ref={setValidation}
-                  />
-                </Container>
+              <FadeIn>
+                <Box key={id} sx={{ height: '100%' }}>
+                  <Container>
+                    <PizzaIcon src={src} alt={desc} />
+                  </Container>
 
-                <Box key={id}>
-                  <Typography variant='body1' sx={{ textAlign: 'center' }}>
-                    {desc}
-                  </Typography>
+                  <Box key={id}>
+                    <Typography
+                      variant='body2'
+                      sx={{ textAlign: 'center', color: 'primary.main' }}>
+                      {heading}
+                    </Typography>
+                    <Typography
+                      variant='body1'
+                      sx={{ textAlign: 'center', color: 'primary.main' }}>
+                      {desc}
+                    </Typography>
+                  </Box>
                 </Box>
-              </Box>
+              </FadeIn>
             );
           })}
         </Nutrition>

@@ -1,8 +1,6 @@
 export { default as HeroContainer } from './Hero';
 export { default as FeaturedInContainer } from './FeaturedIn';
-export { default as OurStoryContainer } from './OurStory';
 export { default as NutritionContainer } from './Nutrition';
-export { default as PizzaOfMonthContainer } from './PizzaMonth';
 export { default as ProductContainer } from './Product';
 export { default as ProductItemContainer } from './ProductItem';
 export { default as ContactDetailsContainer } from './ContactDetails';
@@ -19,3 +17,5 @@ export { default as SuccessContainer } from './Success';
 export { default as NotFoundContainer } from './NotFound';
 export { default as ProductListContainer } from './ProductList';
 export { default as SearchListContainer } from './SearchList';
+export { default as StoryContainer } from './Story';
+

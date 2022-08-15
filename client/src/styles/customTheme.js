@@ -1,20 +1,25 @@
 import { createTheme } from '@mui/material/styles';
 const warningColor = '#d14334';
+const warningLight = '#d4594f';
 
 const primaryColor = '#1c1c1c';
-
+const primaryLight = '#828282';
 const secondaryColor = '#e9e7dc';
+const secondaryLight = '#f3f1ec';
 
 export const customTheme = createTheme({
   palette: {
     primary: {
       main: primaryColor,
+      light: primaryLight,
     },
     secondary: {
       main: secondaryColor,
+      light: secondaryLight,
     },
     warning: {
       main: warningColor,
+      light: warningLight,
     },
   },
   breakpoints: {
@@ -104,9 +109,11 @@ export const customTheme = createTheme({
     header1: {
       fontWeight: 400,
       fontFamily: 'Thunder, sans-serif',
-      textTransform: 'capitalize',
+      textTransform: 'uppercase',
       fontStyle: 'uppercase',
       fontSize: 'clamp(3.38rem, calc(0.88rem + 13.47vw), 11.77rem)',
+      lineHeight: 1,
+      letterSpacing: '0.25rem',
     },
     header2: {
       fontWeight: 400,
@@ -132,6 +139,7 @@ export const customTheme = createTheme({
         WebkitFontSmoothing: 'subpixel-antialiased',
       },
     },
+
     header4: {
       fontFamily: 'Thunder, sans-serif',
       fontSize: 'clamp(3.38rem, calc(0.88rem + 13.47vw), 11.77rem)',
@@ -148,6 +156,18 @@ export const customTheme = createTheme({
         WebkitFontSmoothing: 'subpixel-antialiased',
       },
     },
+    header5: {
+      fontFamily: 'Thunder, sans-serif',
+      fontSize: 'clamp(3.38rem, calc(0.88rem + 13.47vw), 11.77rem)',
+      lineHeight: 1,
+      letterSpacing: '0.25rem',
+      textTransform: 'uppercase',
+      fontWeight: 400,
+      display: 'block',
+      WebkitFontSmoothing: 'subpixel-antialiased',
+      WebkitTextStroke: `0.5px inherit`,
+      WebkitTextFillColor: 'inherit',
+    },
     subheader1: {
       fontSize: '3.2rem',
       fontWeight: 400,
@@ -155,6 +175,57 @@ export const customTheme = createTheme({
       textTransform: 'uppercase',
       display: 'block',
       letterSpacing: '.25rem',
+    },
+    subheader2: {
+      fontSize: '6.4rem',
+      fontWeight: 400,
+      fontFamily: 'Thunder, sans-serif',
+      textTransform: 'uppercase',
+      display: 'block',
+      letterSpacing: '.25rem',
+      color: secondaryColor,
+      textAlign: 'center',
+      '& span': {
+        WebkitTextStroke: `.15rem ${warningColor}`,
+        WebkitTextFillColor: primaryColor,
+        WebkitFontSmoothing: 'subpixel-antialiased',
+      },
+    },
+    subheader3: {
+      fontSize: '4.8rem',
+      fontWeight: 400,
+      fontFamily: 'Thunder, sans-serif',
+      textTransform: 'uppercase',
+      display: 'block',
+      letterSpacing: '.25rem',
+      color: secondaryColor,
+      textAlign: 'center',
+      WebkitTextStroke: `0.25px ${secondaryColor}`,
+      WebkitTextFillColor: secondaryColor,
+      WebkitFontSmoothing: 'subpixel-antialiased',
+      '& span': {
+        WebkitTextStroke: `.15rem ${warningColor}`,
+        WebkitTextFillColor: primaryColor,
+        WebkitFontSmoothing: 'subpixel-antialiased',
+      },
+    },
+    subheader4: {
+      fontWeight: 400,
+      fontFamily: 'Thunder, sans-serif',
+      textTransform: 'uppercase',
+      fontStyle: 'uppercase',
+      fontSize: 'clamp(3.38rem, calc(0.88rem + 13.47vw), 11.77rem)',
+      lineHeight: 1,
+      letterSpacing: '0.25rem',
+    },
+    subheader5: {
+      fontWeight: 400,
+      fontFamily: 'Thunder, sans-serif',
+      textTransform: 'uppercase',
+      fontStyle: 'uppercase',
+      fontSize: 'clamp(2.34rem, calc(0.84rem + 6.87vw), 9.08rem)',
+      lineHeight: 1,
+      letterSpacing: '0.25rem',
     },
     body1: {
       fontSize: '1.6rem',

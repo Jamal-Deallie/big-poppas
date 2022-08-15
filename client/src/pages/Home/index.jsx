@@ -4,7 +4,9 @@ import {
   PizzaOfMonthContainer,
   OurStoryContainer,
   NutritionContainer,
+  NaturalContainer,
   CTAContainer,
+  StoryContainer,
 } from '../../containers';
 import { TextScroll } from '../../components';
 import { MainLayout } from '../../Layouts';
@@ -12,9 +14,10 @@ export default function HomePage() {
   return (
     <>
       <HeroContainer />
-      <FeaturedInContainer />
-      <OurStoryContainer />
+      <StoryContainer />
       <NutritionContainer />
+
+      <FeaturedInContainer />
       <CTAContainer />
     </>
   );

@@ -1,40 +1,42 @@
 import { styled } from '@mui/system';
-import { Typography, Container, Grid } from '@mui/material';
+import { Typography, Box, Grid } from '@mui/material';
 
-export const Image = styled('img')`
-  width: 100%;
-`;
+export const Image = styled('img')({
+  width: '100%',
+  padding: 'calc(.8rem + 1.5vw)',
+});
 
 export const ImageWrap = styled('div')`
   display: flex;
   align-items: stretch;
   justify-content: center;
-
-
-
 `;
 
 export const GridContainer = styled(Grid)`
   margin: 0 auto;
+  max-width: 135rem;
 `;
 
-export const GridItem = styled(Grid)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5rem;
-  flex-direction: column;
-`;
+export const GridItem = styled(Grid)({});
 
-export const Text = styled(Typography)`
-  margin-top: 7.5rem;
-  font-size: 1.8rem;
-  color: #e9e7dc;
-  max-width: 65rem;
-`;
+export const Text = styled(Typography)(({ theme }) => ({
+  backgroundColor: theme.palette.warning.main,
+}));
 
-export const LocationSection = styled('section')`
-  background: #d14334;
-  width: 100%;
-  padding: 12.5rem 0;
-`;
+export const LocationSection = styled('section')(({ theme }) => ({
+  width: '100%',
+  backgroundColor: theme.palette.warning.main,
+  padding: '4% 0 5%',
+  [theme.breakpoints.down('md')]: {
+    padding: '15% 0',
+  },
+}));
+
+export const ContentContainer = styled(Box)(({ theme }) => ({
+  width: '100%',
+  padding: 'calc(.8rem + 1.5vw)',
+  marginTop: '5% ',
+  [theme.breakpoints.down('md')]: {
+    marginTop: 0,
+  },
+}));

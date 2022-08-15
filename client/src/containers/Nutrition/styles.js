@@ -4,7 +4,11 @@ import { Typography, Box, Grid } from '@mui/material';
 export const NutritionSection = styled(Box)(({ theme }) => ({
   width: '100%',
   background: theme.palette.warning.main,
-  padding: '5.5rem 0',
+  padding: '5% 0',
+  height: '100%',
+  [theme.breakpoints.down('md')]: {
+    padding: '15% 0',
+  },
 }));
 
 export const ContentContainer = styled(Grid)({
@@ -14,6 +18,7 @@ export const ContentContainer = styled(Grid)({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  paddingTop: '2.5%',
 });
 
 export const Pizza = styled('img')({

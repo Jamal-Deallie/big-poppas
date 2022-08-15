@@ -20,7 +20,7 @@ connectDB();
 
 app.use(
   cors({
-    origin: process.env.WEB_APP_URL,
+    origin: [process.env.WEB_APP_URL],
   })
 );
 

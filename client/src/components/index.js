@@ -17,6 +17,7 @@ export { default as ATCButton } from './ATCButton';
 export { default as Footer } from './Footer';
 export { default as ProductList } from './ProductList';
 export { default as TextScroll } from './TextScroll';
+export { default as TextDouble } from './TextDouble';
 export { default as Search } from './Search';
 export { default as MobileMenu } from './MobileMenu';
 export { default as LogoutButton } from './LogoutButton';

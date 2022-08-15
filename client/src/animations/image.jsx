@@ -14,15 +14,14 @@ export default function ImageAnimation({ children, id }) {
     gsap.registerPlugin(ScrollTrigger);
     gsap.fromTo(
       q(`#${id}-image`),
-      { yPercent: 100, opacity: 0 },
+      { yPercent: 50, opacity: 0 },
       {
         yPercent: 0,
         opacity: 1,
         delay: 1,
-        duration: 0.5,
+        duration: 2,
         scrollTrigger: {
           trigger: ref.current,
-
           start: 'top center',
         },
       }

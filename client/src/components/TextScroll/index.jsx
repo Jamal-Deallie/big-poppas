@@ -3,7 +3,7 @@ import {
   TextWrapper,
   ScrollWrapper,
   Outline,
-  ScrollContainer,
+  Text,
   SmileyFace,
   SmileyContainer,
   ContentContainer,
@@ -13,7 +13,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import useArrayRef from '../../hooks/useArrayRef';
 import { useEnhancedEffect } from '../../hooks/useEnhancedEffect';
 import { rotationAnimation } from '../../animations/rotate';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { horizontalLoop } from '../../animations/horizontalLoop';
 
 export default function TextScroll({ children }) {
@@ -38,85 +38,80 @@ export default function TextScroll({ children }) {
   }, [smileyFace]);
 
   return (
-    <Box sx={{ position: 'relative' }}>
-      <ScrollContainer ref={scrollWrapper}>
-        <ScrollWrapper>
-          <TextWrapper ref={setWrapper}>
-            <SmileyContainer>
-              <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
-            </SmileyContainer>
-            I <Outline>LOVE </Outline> It When You call me
-            <Outline> Big Poppa</Outline>
-            <SmileyContainer>
-              <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
-            </SmileyContainer>
-            I <Outline>LOVE </Outline>
-            It When You call me
-            <Outline> Big Poppa</Outline>
-            <SmileyContainer>
-              <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
-            </SmileyContainer>
-            I <Outline>LOVE </Outline>
-            It When You call me
-            <Outline> Big Poppa</Outline>
-            <SmileyContainer>
-              <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
-            </SmileyContainer>
-            I <Outline>LOVE </Outline>
-            It When You call me
-            <Outline> Big Poppa</Outline>
-            <SmileyContainer>
-              <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
-            </SmileyContainer>
-          </TextWrapper>
-          <ContentContainer>{children}</ContentContainer>
-          <TextWrapper ref={setWrapper}>
-            <SmileyContainer>
-              <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
-            </SmileyContainer>
-            It's <Outline>All </Outline>Good Baby
-            <Outline> Baby</Outline>
-            <SmileyContainer>
-              <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
-            </SmileyContainer>
-            It's <Outline>All </Outline>Good Baby
-            <Outline> Baby</Outline>
-            <SmileyContainer>
-              <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
-            </SmileyContainer>
-            It's <Outline>All </Outline>Good Baby
-            <Outline> Baby</Outline>
-            <SmileyContainer>
-              <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
-            </SmileyContainer>
-            It's <Outline>All </Outline>Good Baby
-            <Outline> Baby</Outline>
-            <SmileyContainer>
-              <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
-            </SmileyContainer>
-            It's <Outline>All </Outline>Good Baby
-            <Outline> Baby</Outline>
-            <SmileyContainer>
-              <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
-            </SmileyContainer>
-            It's <Outline>All </Outline>Good Baby
-            <Outline> Baby</Outline>
-            <SmileyContainer>
-              <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
-            </SmileyContainer>
-            It's <Outline>All </Outline>Good Baby
-            <Outline> Baby</Outline>
-            <SmileyContainer>
-              <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
-            </SmileyContainer>
-            It's <Outline>All </Outline>Good Baby
-            <Outline> Baby</Outline>
-            <SmileyContainer>
-              <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
-            </SmileyContainer>
-          </TextWrapper>
-        </ScrollWrapper>
-      </ScrollContainer>
+    <Box
+      sx={{
+        position: 'relative',
+        overflow: 'hidden',
+        backgroundColor: 'primary.main',
+      }}>
+      <TextWrapper
+        sx={{
+          width: '150%',
+          position: 'relative',
+          gap: '2rem',
+          display: 'flex',
+          alignItems: 'center',
+          overflow: 'hidden',
+        }}>
+        {Array.from(Array(10), (_, x) => {
+          return (
+            <Box
+              key={x}
+              ref={setWrapper}
+              sx={{
+                whiteSpace: 'nowrap',
+                display: 'flex',
+                alignItems: 'center',
+        
+              }}>
+              <SmileyContainer>
+                <SmileyFace src='images/smiley_face.svg' ref={setSmileyFace} />
+              </SmileyContainer>
+              <Text>
+                I <Outline>LOVE </Outline> It When You call me
+                <Outline> Big Poppa</Outline>
+              </Text>
+            </Box>
+          );
+        })}
+      </TextWrapper>
+
+      <ContentContainer>{children}</ContentContainer>
+      {/* <Box>
+        <TextWrapper
+          sx={{
+            width: '150%',
+            position: 'relative',
+            gap: '2rem',
+            display: 'flex',
+            alignItems: 'center',
+            overflow: 'hidden',
+          }}>
+          {Array.from(Array(10), (_, x) => {
+            return (
+              <Box
+                key={x}
+                ref={setWrapper}
+                sx={{
+                  whiteSpace: 'nowrap',
+                  display: 'flex',
+                  alignItems: 'center',
+                }}>
+                <SmileyContainer>
+                  <SmileyFace
+                    src='images/smiley_face.svg'
+                    ref={setSmileyFace}
+                  />
+                </SmileyContainer>
+                <Text>
+                  It's <Outline>All</Outline> Good Baby
+                  <Outline> Baby</Outline>
+                </Text>
+              </Box>
+            );
+          })}
+        </TextWrapper>
+      </Box> */}
     </Box>
   );
 }

@@ -1,18 +1,27 @@
 import { styled } from '@mui/system';
-import { Box, Container } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 export const TextWrapper = styled(Box)(({ theme }) => ({
-  display: 'inline-flex',
+  width: '150%',
+  position: 'relative',
+  gap: '2rem',
+  display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center',
-  height: '24vh',
-  textOverflow: 'ellipsis',
-  whiteSpace: 'pre',
+  overflow: 'hidden',
   fontSize: 'clamp(96px, 16vh, 260px)',
   color: theme.palette.secondary.main,
   fontFamily: 'Thunder, sans-serif',
   textTransform: 'uppercase',
-  width: '120%',
+  [theme.breakpoints.down('md')]: {
+    display: 'none',
+  },
+}));
+
+export const Text = styled(Typography)(({ theme }) => ({
+  fontSize: 'clamp(96px, 16vh, 260px)',
+  color: theme.palette.secondary.main,
+  fontFamily: 'Thunder, sans-serif',
+  textTransform: 'uppercase',
   [theme.breakpoints.down('md')]: {
     display: 'none',
   },
@@ -40,6 +49,7 @@ export const ScrollContainer = styled(Box)(({ theme }) => ({
 export const SmileyFace = styled('img')({
   height: '9rem',
   marginBottom: '2rem',
+  marginRight: '2.5rem',
 });
 
 export const SmileyContainer = styled(Box)({

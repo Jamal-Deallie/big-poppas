@@ -1,5 +1,5 @@
 import { styled } from '@mui/system';
-import { Typography, Container, Grid, Box } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 
 export const MemoriamSection = styled('section')(({ theme }) => ({
   background: theme.palette.primary.main,
@@ -8,23 +8,6 @@ export const MemoriamSection = styled('section')(({ theme }) => ({
 }));
 
 export const InnerContainer = styled(Container)({ margin: '0 auto' });
-
-export const Heading = styled(Typography)`
-  font-family: Thunder;
-  font-size: clamp(3.38rem, calc(0.88rem + 13.47vw), 11.77rem);
-  font-weight: bold;
-  line-height: 1.2;
-  letter-spacing: 0.25rem;
-  text-transform: uppercase;
-  color: #e9e7dc;
-  text-align: center;
-`;
-
-
-export const Outline = styled('span')(({ theme }) => ({
-  WebkitTextStroke: `.15rem ${theme.palette.warning.main}`,
-  WebkitTextFillColor: theme.palette.primary.main,
-}));
 
 export const Image = styled('img')(({ theme }) => ({
   width: '100%',

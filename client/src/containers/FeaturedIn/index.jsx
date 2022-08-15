@@ -1,15 +1,22 @@
 import { FeaturedSection } from './styles.js';
 import { Carousel } from '../../components';
 import { featureItems } from '../../shared/featureItems';
-import { Heading } from '../../components';
+import { TextDouble } from '../../components';
 import { Box } from '@mui/material';
-export default function FeaturedInContainer() {
-  const matrix1 = 'matrix(0.99863, 0.052336, -0.052336, 0.99863, 0, 0)';
 
+export default function FeaturedInContainer() {
+  const textData = [
+    {
+      id: 1,
+      text: 'Featured In',
+      clrSub: 'primary.main',
+      clrTrail: 'warning.main',
+    },
+  ];
   return (
     <FeaturedSection>
-      <Heading firstLine={' Featured In'} opposite={true} matrix1={matrix1} />
-      <Box sx={{ mt: 7.5 }}>
+      <TextDouble textLines={textData} variant='subheader4' />
+      <Box sx={{ mt: '2.5%' }}>
         <Carousel items={featureItems.slice(0, 10)} reverse={false} />
       </Box>
       <Box>

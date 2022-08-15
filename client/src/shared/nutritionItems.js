@@ -1,18 +1,27 @@
 export const nutritionItems = [
   {
-    id: 0,
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-  },
-  {
     id: 1,
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    heading: 'Pesticides Free Vegetables',
+   desc: 'Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.',
+    src: 'images/icons/broccoli.svg'
   },
   {
     id: 2,
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    heading: 'Diary Free Cheese',
+    desc: 'Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.',
+    src: 'images/icons/cheese.svg'
   },
   {
     id: 3,
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    heading: 'Gluten Free Crust',
+    desc: 'Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.',
+    src: 'images/icons/bread.svg'
   },
+  {
+    id: 4,
+    heading: 'Nitrate Free Meats',
+    desc: 'Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.',
+    src: 'images/icons/sausage-2.svg'
+  },
+
 ];
