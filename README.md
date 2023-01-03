@@ -2,7 +2,7 @@
 <h1 align="center">Big Poppas</h1>
 
 <p align="center">A MERN Pizzeria Application inspired by Notorious B.I.G with JWT Authentication, GreenSock Animation, and stripe add to cart & checkout </p>
-<p align="center"><a href="https://github.com/Jamal-Deallie/big-poppas.git">View Demo</a>
+<p align="center"><a href="https://big-poppas.vercel.app">View Demo</a>
 </p>
 </div>
 
@@ -39,7 +39,7 @@ Use a valid future date, such as 12/34.
 Use any three-digit CVC (four digits for American Express cards).
 Use any value you like for other form fields.
 
-The State is managed with RTK Query. The Data is cached for increase speed.
+The State is managed with Redux Toolkit. The Data is cached for increase speed.
 
 The Animation created with Greensock ScrollTrigger, Timeline, & Split Text
 

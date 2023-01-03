@@ -4,7 +4,7 @@ export const apiSlice = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({
     mode: 'cors',
-    baseUrl: 'https://big-poppas.herokuapp.com',
+    baseUrl: 'https://big-poppas-production.up.railway.app',
     // baseUrl: 'http://localhost:4000',
     prepareHeaders: (headers, { getState }) => {
       const token = JSON.parse(localStorage.getItem('token'));
