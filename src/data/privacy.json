@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "subject": "Information We Collect",
+      "description": "We collect personal information such as names, contact details, and payment information provided voluntarily during class registrations and memberships."
+    },
+    {
+      "id": 2,
+      "subject": "How We Use Your Information",
+      "description": "Personal information is used for class scheduling, communication, and to enhance our services. We may also use it to provide information about promotions and events."
+    },
+    {
+      "id": 3,
+      "subject": "Information Sharing",
+      "description": "We do not sell or share personal information with third parties. Information may be shared with instructors and staff to facilitate class attendance."
+    },
+    {
+      "id": 4,
+      "subject": "How We Protect Personal Information",
+      "description": "We implement security measures to protect personal information. However, no method is 100% secure, and we cannot guarantee absolute security."
+    },
+    {
+      "id": 5,
+      "subject": "Retention of Personal Information",
+      "description": "We retain personal information for the duration necessary for the purposes outlined in this policy unless a longer retention period is required or permitted by law."
+    },
+    {
+      "id": 6,
+      "subject": "Updates to Our Privacy Policy",
+      "description": "We may update our privacy policy to reflect changes in our practices. Updated policies will be effective upon posting on our website."
+    },
+    {
+      "id": 7,
+      "subject": "How To Contact Us",
+      "description": "For questions or concerns regarding this Privacy Policy, please contact us at contact@refreshyogastudios.com."
+    },
+    {
+      "id": 8,
+      "subject": "Cookie Policy",
+      "description": "We use cookies to enhance user experience. Cookies are small files stored on your device that help improve website functionality. You can disable cookies in your browser settings, but this may affect the functionality of the website."
+    }
+  ]
+  

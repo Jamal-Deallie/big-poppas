@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* colors */
+  --primary: 0 100% 50%;
+  --primary-foreground: 0 0% 0%;
+  --tertiary: 60 100% 99%;
+  --tertiary-foreground: 0 0% 0%;
+  --secondary: 0 0% 0%;
+  --secondary-foreground: 60 100% 99%;
+  --background: 0 0% 96%;
+  --body-foreground: 0 0% 0%;
+  --lh: calc(2px + 2ex + 2px);
+}
+
+@media (min-width: 800px) {
+  :root {
+    --viewport-w: 1366;
+    --nav-height: 80;
+  }
+}
+
+@media (max-width: 849px) {
+  :root {
+    --viewport-w: 375;
+    --nav-height: 65;
+  }
+}
+
+@layer base {
+  .title-xl {
+    @apply text-6xl lg:text-10xl font-heading;
+  }
+  .title-lg {
+    @apply text-5xl leading-none lg:text-9xl font-heading lg:leading-[0.86];
+  }
+  .title-md {
+    @apply text-3xl leading-none lg:text-7xl font-heading;
+  }
+  .title-sm {
+    @apply text-2xl leading-none lg:text-5xl font-heading;
+  }
+  .title-xs {
+    @apply text-xl leading-none lg:text-2xl font-heading;
+  }
+  .grid-inner {
+    @apply grid grid-cols-12 gap-x-6 md:grid-cols-8;
+  }
+  .grid-block {
+    @apply grid grid-cols-12 md:grid-cols-6;
+  }
+  .p-inline {
+    @apply px-4 lg:px-10;
+  }
+}
+
+@layer utilities {
+  html.lenis {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.circ {
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.splitLinesParent {
+  background: transparent;
+  display: inline-block;
+  line-height: 1;
+}
+
+.btn-shadow {
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px;
+}
+
+.btn-box-shadow {
+  box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+}
+
+.polygon {
+  float: left;
+  shape-outside: polygon(0 0, 0 300px, 200px 300px);
+  clip-path: polygon(0% 100%, 100% 100%, 50% 0%);
+
+  background: linear-gradient(to top right, #86f7cc, #67d7f5);
+}
+
+.tri-right {
+  float: left;
+  shape-outside: polygon(0 0, 0 300px, 200px 300px);
+  clip-path: polygon(0 0, 0 300px, 200px 300px);
+
+  background: linear-gradient(to bottom left, #67d7f5, #86f7cc);
+}
+.left {
+  float: left;
+  shape-outside: polygon(55% 100%, 0% 100%, 0% 0%);
+
+  clip-path: polygon(55% 100%, 0% 100%, 0% 0%);
+}
+
+.right {
+  float: right;
+  shape-outside: polygon(100% 100%, 100% 0%, 50% 100%);
+  clip-path: polygon(100% 100%, 100% 0%, 50% 100%);
+  /* background: linear-gradient(to top right, #67d7f5, #86f7cc); */
+}
+.bx-shadow {
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Biggie Supreme",
+    "price": "$12.99",
+    "ingredients": "Pepperoni, Sausage, Bell Peppers, Onions"
+  },
+  {
+    "id": 2,
+    "name": "Juicy BBQ",
+    "price": "$11.99",
+    "ingredients": "BBQ Chicken, Bacon, Red Onions, Cilantro"
+  },
+  {
+    "id": 3,
+    "name": "Brooklyn Beef",
+    "price": "$13.99",
+    "ingredients": "Ground Beef, Mushrooms, Green Peppers, Black Olives"
+  },
+  {
+    "id": 4,
+    "name": "Hypnotize Hawaiian",
+    "price": "$10.99",
+    "ingredients": "Ham, Pineapple, Bacon, Jalapenos"
+  },
+  {
+    "id": 5,
+    "name": "Mo Money Meat Lover's",
+    "price": "$14.99",
+    "ingredients": "Pepperoni, Italian Sausage, Bacon, Ground Beef"
+  },
+  {
+    "id": 6,
+    "name": "Notorious Veggie Deluxe",
+    "price": "$11.99",
+    "ingredients": "Mushrooms, Onions, Green Pepper, Black Olives"
+  },
+  {
+    "id": 7,
+    "name": "One More Slice",
+    "price": "$9.99",
+    "ingredients": "Pepperoni, Mushrooms, Black Olives, Green Peppers"
+  },
+  {
+    "id": 8,
+    "name": "Party and Bullshit BBQ Chicken",
+    "price": "$12.99",
+    "ingredients": "BBQ Chicken, Bacon, Red Onions, Cilantro"
+  },
+  {
+    "id": 9,
+    "name": "Warning: Spicy Inferno",
+    "price": "$10.99",
+    "ingredients": "Pepperoni, Jalapenos, Red Peppers,Hot Sauce Drizzle"
+  },
+  {
+    "id": 10,
+    "name": "All About the Dough Supreme",
+    "price": "$13.99",
+    "ingredients": "Pepperoni, Sausage, Mushroom,Black Olives"
+  }
+]
